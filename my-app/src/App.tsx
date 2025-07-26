@@ -1,18 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-
-
   return (
     <>
-        <BrowserRouter>
+      <BrowserRouter>
         <Routes>
-        <Route path="/" />
-    
+          <Route path="/" />
         </Routes>
       </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
