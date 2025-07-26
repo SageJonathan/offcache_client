@@ -1,12 +1,11 @@
+function header() {
+  return (
+    <>
+      <header>
+        <h1>Git Together</h1>
+      </header>
+    </>
+  );
+}
 
-
-function header () {
-    return (
-      <>
-        
-      </>
-    );
-  }
-  
-  export default header;
-  
+export default header;
