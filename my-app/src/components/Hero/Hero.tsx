@@ -33,8 +33,6 @@ const Hero = () => {
     <section className="hero">
       <div className="hero__container">
         <div className="hero__content">
-         
-
           <h1 className="hero__title">
             Human Connections,
             <span className="hero__title-highlight"> Not Just Networking</span>
@@ -43,7 +41,7 @@ const Hero = () => {
           <p className="hero__subtitle">
             Tired of awkward coffee chats and LinkedIn spam? We're building a
             platform that matches you monthly with someone who shares your love
-            for hiking, meditation, or personal growth. 
+            for hiking, meditation, or personal growth.
           </p>
 
           <div className="hero__cta">

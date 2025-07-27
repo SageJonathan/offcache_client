@@ -1,4 +1,3 @@
-
 import "./aboutC.scss";
 
 const AboutC = () => {
