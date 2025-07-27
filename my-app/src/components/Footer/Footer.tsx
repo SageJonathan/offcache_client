@@ -1,4 +1,4 @@
-import React from "react";
+
 import Email from "../../assets/icons/email.png";
 import Facebook from "../../assets/icons/facebook.png";
 import Instagram from "../../assets/icons/instagram.png";

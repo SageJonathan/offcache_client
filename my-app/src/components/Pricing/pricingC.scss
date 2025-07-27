@@ -74,26 +74,25 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 
     @media (max-width: 768px) {
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
   }
 
-  &__toggle-option {
+  &__toggle-label {
     font-size: 1rem;
     color: #4a5568;
-    font-weight: 500;
     transition: color 0.3s ease;
 
-    &.active {
+    &--active {
       color: #2d3748;
       font-weight: 600;
     }
   }
 
-  &__toggle-save {
+  &__toggle-savings {
     display: block;
     font-size: 0.75rem;
     color: #d4a574;
@@ -103,38 +102,37 @@
 
   &__toggle-button {
     position: relative;
-    width: 3rem;
-    height: 1.5rem;
+    width: 3.5rem;
+    height: 2rem;
     background: #e2e8f0;
     border: none;
     border-radius: 1rem;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+
+    &--active {
+      background: #d4a574;
+
+      .pricing__toggle-slider {
+        transform: translateX(1.5rem);
+      }
+    }
   }
 
   &__toggle-slider {
     position: absolute;
-    top: 0.125rem;
-    left: 0.125rem;
-    width: 1.25rem;
-    height: 1.25rem;
+    top: 0.25rem;
+    left: 0.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
     background: white;
     border-radius: 50%;
     transition: transform 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-    &.active {
-      transform: translateX(1.5rem);
-    }
-  }
-
-  &__toggle-button:hover {
-    background: #cbd5e0;
   }
 
   &__plans {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     margin-bottom: 4rem;
 
@@ -159,10 +157,6 @@
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
     }
 
-    @media (max-width: 768px) {
-      padding: 2rem 1.5rem;
-    }
-
     &--popular {
       border: 2px solid #d4a574;
       transform: scale(1.05);
@@ -172,8 +166,8 @@
       }
     }
 
-    &--coming-soon {
-      opacity: 0.8;
+    @media (max-width: 768px) {
+      padding: 2rem 1.5rem;
     }
   }
 
@@ -190,7 +184,7 @@
     font-weight: 600;
 
     &--coming-soon {
-      background: linear-gradient(135deg, #4a5568, #2d3748);
+      background: linear-gradient(135deg, #a0aec0, #718096);
     }
   }
 
@@ -204,26 +198,22 @@
     font-weight: 700;
     color: #2d3748;
     margin-bottom: 0.5rem;
-
-    @media (max-width: 768px) {
-      font-size: 1.25rem;
-    }
   }
 
   &__plan-description {
-    font-size: 0.9rem;
     color: #4a5568;
-    line-height: 1.5;
+    margin-bottom: 1.5rem;
   }
 
   &__plan-price {
-    text-align: center;
-    margin-bottom: 2rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.25rem;
   }
 
-  &__plan-price-free {
-    font-size: 2rem;
-    font-weight: 700;
+  &__plan-currency {
+    font-size: 1.5rem;
     color: #2d3748;
   }
 
@@ -231,49 +221,25 @@
     font-size: 3rem;
     font-weight: 800;
     color: #2d3748;
-    line-height: 1;
-
-    @media (max-width: 768px) {
-      font-size: 2.5rem;
-    }
-  }
-
-  &__plan-currency {
-    font-size: 1.5rem;
-    vertical-align: top;
   }
 
   &__plan-period {
     font-size: 1rem;
     color: #4a5568;
-    margin-top: 0.5rem;
-  }
-
-  &__plan-original {
-    font-size: 0.875rem;
-    color: #a0aec0;
-    text-decoration: line-through;
-    margin-top: 0.25rem;
   }
 
   &__plan-features {
     list-style: none;
-    padding: 0;
     margin: 0 0 2rem 0;
+    padding: 0;
   }
 
   &__plan-feature {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 0.75rem 0;
-    font-size: 0.9rem;
+    margin-bottom: 1rem;
     color: #4a5568;
-    border-bottom: 1px solid rgba(212, 165, 116, 0.1);
-
-    &:last-child {
-      border-bottom: none;
-    }
   }
 
   &__plan-check {
@@ -290,50 +256,83 @@
     border: none;
     padding: 1rem 2rem;
     border-radius: 1rem;
-    font-size: 1rem;
+    font-size: 1.125rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
 
-    &:hover {
+    &:hover:not(:disabled) {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(212, 165, 116, 0.3);
+      box-shadow: 0 10px 25px rgba(212, 165, 116, 0.3);
     }
 
-    &--coming-soon {
-      background: linear-gradient(135deg, #4a5568, #2d3748);
+    &--disabled {
+      background: #e2e8f0;
+      color: #a0aec0;
+      cursor: not-allowed;
 
       &:hover {
-        box-shadow: 0 8px 20px rgba(74, 85, 104, 0.3);
+        transform: none;
+        box-shadow: none;
       }
+    }
+
+    @media (max-width: 768px) {
+      padding: 0.875rem 1.75rem;
+      font-size: 1rem;
+    }
+  }
+
+  &__section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    @media (max-width: 768px) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 1rem;
+
+    @media (max-width: 1024px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1.75rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__section-subtitle {
+    font-size: 1.125rem;
+    color: #4a5568;
+    max-width: 600px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
     }
   }
 
   &__faq {
     padding: 4rem 0;
-    background: white;
 
     @media (max-width: 768px) {
       padding: 3rem 0;
     }
   }
 
-  &__faq-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #2d3748;
-    text-align: center;
-    margin-bottom: 3rem;
-
-    @media (max-width: 768px) {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
-  }
-
   &__faq-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 2rem;
 
     @media (max-width: 768px) {
@@ -343,30 +342,34 @@
   }
 
   &__faq-item {
+    background: white;
     padding: 2rem;
-    background: linear-gradient(135deg, #fefefe, #f8f6f3);
-    border-radius: 1rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(212, 165, 116, 0.15);
+
+    @media (max-width: 768px) {
+      padding: 1.5rem;
+    }
   }
 
   &__faq-question {
-    font-size: 1.125rem;
-    font-weight: 600;
+    font-size: 1.25rem;
+    font-weight: 700;
     color: #2d3748;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
 
     @media (max-width: 768px) {
-      font-size: 1rem;
+      font-size: 1.125rem;
     }
   }
 
   &__faq-answer {
-    font-size: 0.9rem;
     color: #4a5568;
     line-height: 1.6;
 
     @media (max-width: 768px) {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
     }
   }
 
