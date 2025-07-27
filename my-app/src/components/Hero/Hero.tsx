@@ -39,11 +39,6 @@ const Hero = () => {
     <section className="hero">
       <div className="hero__container">
         <div className="hero__content">
-          <div className="hero__badge">
-            <span className="hero__badge-dot"></span>
-            Featured in TechCrunch • 2,847+ humans connected
-          </div>
-
           <h1 className="hero__title">
             Human Connections,
             <span className="hero__title-highlight"> Not Just Networking</span>
@@ -59,7 +54,7 @@ const Hero = () => {
           <div className="hero__cta">
             <button className="hero__cta-primary">Start Free Trial</button>
             <button className="hero__cta-secondary">
-              <span>See Sample Matches</span>
+              <span>Learn More</span>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
                   d="M4 10H16M16 10L10 4M16 10L10 16"

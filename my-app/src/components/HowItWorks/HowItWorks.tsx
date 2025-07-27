@@ -40,7 +40,7 @@ const HowItWorks = () => {
       icon: "💝",
     },
     {
-      title: "Not Meetup",
+      title: "You Focused",
       description:
         "We curate 1-on-1 matches based on shared interests, not large group events. Quality over quantity.",
       icon: "👥",
@@ -80,7 +80,12 @@ const HowItWorks = () => {
           </h3>
           <div className="how-it-works__differences-grid">
             {differences.map((difference, index) => (
-              <div key={index} className="how-it-works__difference">
+              <div
+                key={index}
+                className={`how-it-works__difference ${
+                  index === 2 ? "how-it-works__difference--full-width" : ""
+                }`}
+              >
                 <div className="how-it-works__difference-icon">
                   {difference.icon}
                 </div>
