@@ -1,5 +1,5 @@
 
-function login () {
+function Login () {
     return (
       <>
         
@@ -7,5 +7,5 @@ function login () {
     );
   }
   
-  export default login;
+  export default Login;
   
