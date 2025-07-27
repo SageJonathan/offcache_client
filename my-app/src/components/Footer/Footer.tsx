@@ -1,54 +1,137 @@
+import React from "react";
 import Email from "../../assets/icons/email.png";
 import Facebook from "../../assets/icons/facebook.png";
 import Instagram from "../../assets/icons/instagram.png";
 import Tiktok from "../../assets/icons/tiktok.png";
-
 import "./footer.scss";
 
 const Footer = () => {
   return (
     <footer className="footer">
-      {/* Left side */}
-      <div className="footer__left-side">
-        <a className="footer__icon" href="mailto:support@gittogether.com">
-          <img src={Email} alt="email" />
-          <p className="footer__text">Contact us</p>
-        </a>
-      </div>
+      <div className="footer__container">
+        {/* Main footer content */}
+        <div className="footer__main">
+          <div className="footer__brand">
+            <h3 className="footer__logo">Git Together</h3>
+            <p className="footer__description">
+              Connecting tech professionals through meaningful, interest-based
+              relationships. Beyond networking—building genuine connections.
+            </p>
+            <div className="footer__contact">
+              <a
+                href="mailto:support@gittogether.com"
+                className="footer__email"
+              >
+                <img src={Email} alt="Email" className="footer__email-icon" />
+                <span>support@gittogether.com</span>
+              </a>
+            </div>
+          </div>
 
-      {/* Middle */}
-      <div className="footer__middle">
-        <p className="footer__text">
-          Made with ❤️ to help real connections grow.
-        </p>
-        <p className="footer__text">
-          &copy; {new Date().getFullYear()} Git Together. All rights reserved.
-        </p>
-      </div>
+          <div className="footer__links">
+            <div className="footer__link-group">
+              <h4 className="footer__link-title">Product</h4>
+              <ul className="footer__link-list">
+                <li>
+                  <a href="#how-it-works">How it Works</a>
+                </li>
+                <li>
+                  <a href="#pricing">Pricing</a>
+                </li>
+                <li>
+                  <a href="#events">Events</a>
+                </li>
+                <li>
+                  <a href="#success-stories">Success Stories</a>
+                </li>
+              </ul>
+            </div>
 
-      {/* Right side */}
-      <div className="footer__right-side">
-        <a
-          className="footer__icon"
-          href="https://www.instagram.com/gittogether"
-          target="_blank"
-        >
-          <img src={Instagram} alt="instagram" />
-        </a>
-        <a
-          className="footer__icon"
-          href="https://www.tiktok.com/@gittogether"
-          target="_blank"
-        >
-          <img src={Tiktok} alt="tiktok" />
-        </a>
-        <a
-          className="footer__icon"
-          href="https://www.facebook.com/gittogether"
-          target="_blank"
-        >
-          <img src={Facebook} alt="facebook" />
-        </a>
+            <div className="footer__link-group">
+              <h4 className="footer__link-title">Company</h4>
+              <ul className="footer__link-list">
+                <li>
+                  <a href="#about">About</a>
+                </li>
+                <li>
+                  <a href="#blog">Blog</a>
+                </li>
+                <li>
+                  <a href="#careers">Careers</a>
+                </li>
+                <li>
+                  <a href="#contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="footer__link-group">
+              <h4 className="footer__link-title">Support</h4>
+              <ul className="footer__link-list">
+                <li>
+                  <a href="#help">Help Center</a>
+                </li>
+                <li>
+                  <a href="#privacy">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="#terms">Terms of Service</a>
+                </li>
+                <li>
+                  <a href="#cookies">Cookie Policy</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom section */}
+        <div className="footer__bottom">
+          <div className="footer__social">
+            <a
+              href="https://instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer__social-link"
+            >
+              <img
+                src={Instagram}
+                alt="Instagram"
+                className="footer__social-icon"
+              />
+            </a>
+            <a
+              href="https://tiktok.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer__social-link"
+            >
+              <img src={Tiktok} alt="TikTok" className="footer__social-icon" />
+            </a>
+            <a
+              href="https://facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer__social-link"
+            >
+              <img
+                src={Facebook}
+                alt="Facebook"
+                className="footer__social-icon"
+              />
+            </a>
+          </div>
+
+          <div className="footer__copyright">
+            <p className="footer__tagline">
+              Made with ❤️ to help real connections grow
+            </p>
+            <p className="footer__copyright-text">
+              &copy; {new Date().getFullYear()} Git Together. All rights
+              reserved.
+            </p>
+          </div>
+        </div>
       </div>
     </footer>
   );
