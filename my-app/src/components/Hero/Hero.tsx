@@ -7,24 +7,18 @@ const Hero = () => {
   const connectionSlides = [
     {
       id: 1,
-      title: "Hiking Together",
-      description: "Sarah & Marcus exploring mountain trails",
-      image: "🏔️",
-      color: "from-green-400 to-emerald-600",
+      image:
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop",
     },
     {
       id: 2,
-      title: "Meditation Session",
-      description: "Alex & Sarah finding peace in mindfulness",
-      image: "🧘‍♀️",
-      color: "from-purple-400 to-indigo-600",
+      image:
+        "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=400&h=400&fit=crop",
     },
     {
       id: 3,
-      title: "Forest Walk",
-      description: "Marcus & Alex connecting through nature",
-      image: "🌿",
-      color: "from-amber-400 to-orange-600",
+      image:
+        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=400&fit=crop",
     },
   ];
 
@@ -39,20 +33,21 @@ const Hero = () => {
     <section className="hero">
       <div className="hero__container">
         <div className="hero__content">
+         
+
           <h1 className="hero__title">
             Human Connections,
             <span className="hero__title-highlight"> Not Just Networking</span>
           </h1>
 
           <p className="hero__subtitle">
-            Tired of awkward coffee chats and LinkedIn spam? We match you
-            monthly with someone who shares your love for hiking, meditation, or
-            personal growth. Real conversations happen through shared
-            experiences.
+            Tired of awkward coffee chats and LinkedIn spam? We're building a
+            platform that matches you monthly with someone who shares your love
+            for hiking, meditation, or personal growth. 
           </p>
 
           <div className="hero__cta">
-            <button className="hero__cta-primary">Start Free Trial</button>
+            <button className="hero__cta-primary">Join Waitlist</button>
             <button className="hero__cta-secondary">
               <span>Learn More</span>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -70,32 +65,30 @@ const Hero = () => {
           <div className="hero__trust">
             <div className="hero__trust-item">
               <span className="hero__trust-icon">✓</span>
-              <span>14-day free trial</span>
+              <span>Free to join</span>
             </div>
             <div className="hero__trust-item">
               <span className="hero__trust-icon">✓</span>
-              <span>Cancel anytime</span>
+              <span>No commitment</span>
             </div>
             <div className="hero__trust-item">
               <span className="hero__trust-icon">✓</span>
-              <span>Vetted members only</span>
+              <span>Quality over quantity</span>
             </div>
           </div>
 
           <div className="hero__stats">
             <div className="hero__stat">
-              <span className="hero__stat-number">94%</span>
-              <span className="hero__stat-label">
-                Say they found real friends
-              </span>
+              <span className="hero__stat-number">500+</span>
+              <span className="hero__stat-label">On waitlist</span>
             </div>
             <div className="hero__stat">
-              <span className="hero__stat-number">156</span>
-              <span className="hero__stat-label">Cities worldwide</span>
+              <span className="hero__stat-number">12</span>
+              <span className="hero__stat-label">Cities planned</span>
             </div>
             <div className="hero__stat">
-              <span className="hero__stat-number">2.8k+</span>
-              <span className="hero__stat-label">Humans connected</span>
+              <span className="hero__stat-number">Q3 2025</span>
+              <span className="hero__stat-label">Launch date</span>
             </div>
           </div>
         </div>
@@ -111,13 +104,11 @@ const Hero = () => {
                   }`}
                 >
                   <div className="hero__slide-content">
-                    <div className="hero__slide-image">{slide.image}</div>
-                    <div className="hero__slide-info">
-                      <h3 className="hero__slide-title">{slide.title}</h3>
-                      <p className="hero__slide-description">
-                        {slide.description}
-                      </p>
-                    </div>
+                    <img
+                      src={slide.image}
+                      alt={`Slide ${slide.id}`}
+                      className="hero__slide-photo"
+                    />
                   </div>
                 </div>
               ))}

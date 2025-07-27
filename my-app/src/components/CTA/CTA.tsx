@@ -8,22 +8,21 @@ const CTA = () => {
         <div className="cta__content">
           <h2 className="cta__title">
             Forget the Script. <br />
-            Clear the Cache. <br /> 
+            Clear the Cache. <br />
             Connect for Real.
           </h2>
           <p className="cta__subtitle">
-            Join thousands of professionals who've found meaningful
-            relationships, business partners, and lifelong friends through
-            shared passions. No awkward networking events. Just authentic human
-            connections.
+            Be among the first to experience authentic connections through
+            shared passions. Join our waitlist and get early access when we
+            launch.
           </p>
 
           <div className="cta__buttons">
             <button className="cta__button cta__button--primary">
-              Start Your Free Trial
+              Join Waitlist
             </button>
             <button className="cta__button cta__button--secondary">
-              Schedule a Call
+              Learn More
             </button>
           </div>
 
@@ -35,7 +34,7 @@ const CTA = () => {
                   fill="currentColor"
                 />
               </svg>
-              <span>14-day free trial</span>
+              <span>Free to join</span>
             </div>
             <div className="cta__feature">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -44,7 +43,7 @@ const CTA = () => {
                   fill="currentColor"
                 />
               </svg>
-              <span>Cancel anytime</span>
+              <span>Early access</span>
             </div>
             <div className="cta__feature">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -53,7 +52,7 @@ const CTA = () => {
                   fill="currentColor"
                 />
               </svg>
-              <span>Vetted members only</span>
+              <span>Quality connections</span>
             </div>
           </div>
         </div>
