@@ -6,18 +6,24 @@ const CTA = () => {
     <section className="cta">
       <div className="cta__container">
         <div className="cta__content">
-          <h2 className="cta__title">Ready for Real Connections?</h2>
+          <h2 className="cta__title">
+            Forget the Script. <br />
+            Clear the Cache. <br /> 
+            Connect for Real.
+          </h2>
           <p className="cta__subtitle">
-            Join thousands of humans who've found meaningful relationships
-            through shared passions for movement and growth
+            Join thousands of professionals who've found meaningful
+            relationships, business partners, and lifelong friends through
+            shared passions. No awkward networking events. Just authentic human
+            connections.
           </p>
 
           <div className="cta__buttons">
             <button className="cta__button cta__button--primary">
-              Start Your Journey
+              Start Your Free Trial
             </button>
             <button className="cta__button cta__button--secondary">
-              Learn More
+              Schedule a Call
             </button>
           </div>
 
@@ -29,7 +35,7 @@ const CTA = () => {
                   fill="currentColor"
                 />
               </svg>
-              <span>No awkward small talk</span>
+              <span>14-day free trial</span>
             </div>
             <div className="cta__feature">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -38,7 +44,7 @@ const CTA = () => {
                   fill="currentColor"
                 />
               </svg>
-              <span>Shared experiences</span>
+              <span>Cancel anytime</span>
             </div>
             <div className="cta__feature">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -47,7 +53,7 @@ const CTA = () => {
                   fill="currentColor"
                 />
               </svg>
-              <span>Authentic conversations</span>
+              <span>Vetted members only</span>
             </div>
           </div>
         </div>

@@ -41,7 +41,7 @@ const Hero = () => {
         <div className="hero__content">
           <div className="hero__badge">
             <span className="hero__badge-dot"></span>
-            Join 2,847+ humans seeking real connections
+            Featured in TechCrunch • 2,847+ humans connected
           </div>
 
           <h1 className="hero__title">
@@ -50,15 +50,16 @@ const Hero = () => {
           </h1>
 
           <p className="hero__subtitle">
-            Every month, we introduce you to someone who shares your curiosity,
-            your love of movement, or your hunger to grow. No job titles. No
-            small talk. Just real conversations—with real people.
+            Tired of awkward coffee chats and LinkedIn spam? We match you
+            monthly with someone who shares your love for hiking, meditation, or
+            personal growth. Real conversations happen through shared
+            experiences.
           </p>
 
           <div className="hero__cta">
-            <button className="hero__cta-primary">Start Your Journey</button>
+            <button className="hero__cta-primary">Start Free Trial</button>
             <button className="hero__cta-secondary">
-              <span>See How It Works</span>
+              <span>See Sample Matches</span>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
                   d="M4 10H16M16 10L10 4M16 10L10 16"
@@ -69,6 +70,21 @@ const Hero = () => {
                 />
               </svg>
             </button>
+          </div>
+
+          <div className="hero__trust">
+            <div className="hero__trust-item">
+              <span className="hero__trust-icon">✓</span>
+              <span>14-day free trial</span>
+            </div>
+            <div className="hero__trust-item">
+              <span className="hero__trust-icon">✓</span>
+              <span>Cancel anytime</span>
+            </div>
+            <div className="hero__trust-item">
+              <span className="hero__trust-icon">✓</span>
+              <span>Vetted members only</span>
+            </div>
           </div>
 
           <div className="hero__stats">

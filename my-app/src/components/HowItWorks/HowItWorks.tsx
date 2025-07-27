@@ -26,6 +26,27 @@ const HowItWorks = () => {
     },
   ];
 
+  const differences = [
+    {
+      title: "Not LinkedIn",
+      description:
+        "No job titles or professional networking. We focus on who you are as a person, not what you do for work.",
+      icon: "🚫",
+    },
+    {
+      title: "Not a Dating App",
+      description:
+        "This is about building authentic friendships and meaningful connections, not romantic relationships.",
+      icon: "💝",
+    },
+    {
+      title: "Not Meetup",
+      description:
+        "We curate 1-on-1 matches based on shared interests, not large group events. Quality over quantity.",
+      icon: "👥",
+    },
+  ];
+
   return (
     <section className="how-it-works" id="how-it-works">
       <div className="how-it-works__container">
@@ -51,6 +72,27 @@ const HowItWorks = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="how-it-works__differences">
+          <h3 className="how-it-works__differences-title">
+            How We're Different
+          </h3>
+          <div className="how-it-works__differences-grid">
+            {differences.map((difference, index) => (
+              <div key={index} className="how-it-works__difference">
+                <div className="how-it-works__difference-icon">
+                  {difference.icon}
+                </div>
+                <h4 className="how-it-works__difference-title">
+                  {difference.title}
+                </h4>
+                <p className="how-it-works__difference-description">
+                  {difference.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
