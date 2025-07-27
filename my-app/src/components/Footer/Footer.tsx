@@ -5,12 +5,12 @@
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-red-500 py-8 px-4">
-      <div className="max-w-6xl mx-auto text-center">
-        <p className="text-sm text-red-500 mb-2">
+    <footer className="footer">
+      <div className="footer__content">
+        <p className="footer__text">
           Made with ❤️ to help real connections grow.
         </p>
-        <p className="text-white">
+        <p className="footer__text">
           &copy; {new Date().getFullYear()} Git Together. All rights reserved.
         </p>
       </div>

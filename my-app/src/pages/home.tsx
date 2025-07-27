@@ -1,12 +1,11 @@
-import Hero from "../components/hero";
+import Hero from "../components/Hero/Hero""
 
-function home () {
-    return (
-      <>
-        <Hero/>
-      </>
-    );
-  }
-  
-  export default home;
-  
+function Home() {
+  return (
+    <>
+      <Hero />
+    </>
+  );
+}
+
+export default Home;
