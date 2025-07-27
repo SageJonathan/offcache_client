@@ -6,7 +6,7 @@ const CTA = () => {
     <section className="cta">
       <div className="cta__container">
         <div className="cta__content">
-          <h2 className="cta__title">Ready to Build Meaningful Connections?</h2>
+          <h2 className="cta__title">Forget the Script. <br /> Clear the Cache. <br /> Connect for Real.</h2>
           <p className="cta__subtitle">
             Join thousands of tech professionals who've found their tribe
             through authentic connections

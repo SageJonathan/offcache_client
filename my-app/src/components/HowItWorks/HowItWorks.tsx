@@ -21,7 +21,7 @@ const HowItWorks = () => {
       number: "03",
       title: "Build & Connect",
       description:
-        "Meet for coffee, virtual chats, or join our monthly members-only events to deepen your network authentically.",
+        "Climb a mountain, float down a river, visit an art gallery, or join our monthly members-only events to deepen your network authentically.",
       icon: "🚀",
     },
   ];
