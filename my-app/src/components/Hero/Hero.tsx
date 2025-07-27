@@ -57,24 +57,28 @@ const Hero = () => {
         <div className="hero__visual">
           <div className="hero__cards">
             <div className="hero__card hero__card--1">
-              <div className="hero__card-avatar">👩‍💻</div>
+              <div className="hero__card-avatar">🏃‍♀️</div>
               <div className="hero__card-info">
                 <span className="hero__card-name">Sarah Chen</span>
-                <span className="hero__card-role">Product Manager</span>
+                <span className="hero__card-role">
+                  Running Group • Product Manager
+                </span>
               </div>
             </div>
             <div className="hero__card hero__card--2">
-              <div className="hero__card-avatar">👨‍💻</div>
+              <div className="hero__card-avatar">🏓</div>
               <div className="hero__card-info">
                 <span className="hero__card-name">Marcus Rodriguez</span>
-                <span className="hero__card-role">Engineering Lead</span>
+                <span className="hero__card-role">
+                  Tennis Match • Engineering Lead
+                </span>
               </div>
             </div>
             <div className="hero__card hero__card--3">
-              <div className="hero__card-avatar">👩‍💼</div>
+              <div className="hero__card-avatar">🎨</div>
               <div className="hero__card-info">
                 <span className="hero__card-name">Alex Thompson</span>
-                <span className="hero__card-role">Founder</span>
+                <span className="hero__card-role">Museum Visit • Founder</span>
               </div>
             </div>
           </div>

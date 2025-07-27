@@ -18,8 +18,17 @@
     justify-content: space-between;
     height: 4rem;
 
+    @media (max-width: 1024px) {
+      padding: 0 1.5rem;
+    }
+
     @media (max-width: 768px) {
       padding: 0 1rem;
+      height: 3.5rem;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0 0.75rem;
     }
   }
 
@@ -36,6 +45,14 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+
+    @media (max-width: 768px) {
+      font-size: 1.25rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.125rem;
+    }
   }
 
   &__nav {
@@ -70,6 +87,10 @@
     padding: 0;
     gap: 2rem;
 
+    @media (max-width: 1024px) {
+      gap: 1.5rem;
+    }
+
     @media (max-width: 768px) {
       flex-direction: column;
       gap: 0;
@@ -91,6 +112,10 @@
     transition: color 0.3s ease;
     padding: 0.5rem 0;
 
+    @media (max-width: 1024px) {
+      font-size: 0.8rem;
+    }
+
     &:hover {
       color: #3b82f6;
     }
@@ -100,12 +125,21 @@
       padding: 1rem 2rem;
       font-size: 1rem;
     }
+
+    @media (max-width: 480px) {
+      padding: 0.875rem 1.5rem;
+      font-size: 0.9rem;
+    }
   }
 
   &__actions {
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    @media (max-width: 1024px) {
+      gap: 0.75rem;
+    }
 
     @media (max-width: 768px) {
       display: none;
@@ -120,6 +154,11 @@
     cursor: pointer;
     transition: all 0.3s ease;
     border: none;
+
+    @media (max-width: 1024px) {
+      padding: 0.375rem 0.75rem;
+      font-size: 0.8rem;
+    }
 
     &--secondary {
       background: transparent;
@@ -161,6 +200,11 @@
       display: flex;
     }
 
+    @media (max-width: 480px) {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+
     span {
       width: 2rem;
       height: 0.25rem;
@@ -168,6 +212,11 @@
       border-radius: 0.125rem;
       transition: all 0.3s ease;
       transform-origin: 1px;
+
+      @media (max-width: 480px) {
+        width: 1.75rem;
+        height: 0.2rem;
+      }
     }
 
     &--open {
