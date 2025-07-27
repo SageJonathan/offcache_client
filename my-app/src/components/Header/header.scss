@@ -3,9 +3,9 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(254, 254, 254, 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  border-bottom: 1px solid rgba(212, 165, 116, 0.15);
   z-index: 1000;
   transition: all 0.3s ease;
 
@@ -39,9 +39,9 @@
   &__brand {
     font-size: 1.5rem;
     font-weight: 800;
-    color: #1e293b;
+    color: #2d3748;
     margin: 0;
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    background: linear-gradient(135deg, #d4a574, #b8860b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -64,13 +64,13 @@
       top: 100%;
       left: 0;
       right: 0;
-      background: white;
-      border-bottom: 1px solid #e2e8f0;
+      background: rgba(254, 254, 254, 0.98);
+      border-bottom: 1px solid rgba(212, 165, 116, 0.15);
       transform: translateY(-100%);
       opacity: 0;
       visibility: hidden;
       transition: all 0.3s ease;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
 
       &--open {
         transform: translateY(0);
@@ -100,12 +100,12 @@
 
   &__nav-item {
     @media (max-width: 768px) {
-      border-bottom: 1px solid #f1f5f9;
+      border-bottom: 1px solid rgba(212, 165, 116, 0.1);
     }
   }
 
   &__nav-link {
-    color: #64748b;
+    color: #4a5568;
     text-decoration: none;
     font-weight: 500;
     font-size: 0.875rem;
@@ -117,7 +117,7 @@
     }
 
     &:hover {
-      color: #3b82f6;
+      color: #d4a574;
     }
 
     @media (max-width: 768px) {
@@ -148,7 +148,7 @@
 
   &__btn {
     padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     font-size: 0.875rem;
     font-weight: 600;
     cursor: pointer;
@@ -162,24 +162,24 @@
 
     &--secondary {
       background: transparent;
-      color: #64748b;
-      border: 1px solid #e2e8f0;
+      color: #4a5568;
+      border: 1px solid rgba(212, 165, 116, 0.25);
 
       &:hover {
-        background: #f8fafc;
-        color: #3b82f6;
-        border-color: #3b82f6;
+        background: rgba(212, 165, 116, 0.08);
+        color: #8b5a2b;
+        border-color: #d4a574;
       }
     }
 
     &--primary {
-      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      background: linear-gradient(135deg, #d4a574, #b8860b);
       color: white;
-      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+      box-shadow: 0 2px 8px rgba(212, 165, 116, 0.25);
 
       &:hover {
         transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        box-shadow: 0 4px 12px rgba(212, 165, 116, 0.35);
       }
     }
   }
@@ -208,7 +208,7 @@
     span {
       width: 2rem;
       height: 0.25rem;
-      background: #1e293b;
+      background: #2d3748;
       border-radius: 0.125rem;
       transition: all 0.3s ease;
       transform-origin: 1px;

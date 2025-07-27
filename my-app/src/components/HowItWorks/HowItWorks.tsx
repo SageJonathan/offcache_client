@@ -5,23 +5,23 @@ const HowItWorks = () => {
   const steps = [
     {
       number: "01",
-      title: "Share Your Story",
+      title: "Share What Moves You",
       description:
-        "Tell us about your interests, passions, and what drives you. We focus on who you are, not just what you do.",
-      icon: "🎯",
+        "Tell us about your love for movement—hiking, climbing, yoga—or your curiosity about philosophy, mindfulness, and personal growth. We focus on what makes you human.",
+      icon: "🌱",
     },
     {
       number: "02",
-      title: "Get Curated Matches",
+      title: "Meet Someone Like You",
       description:
-        "Every month, we introduce you to one new member based on shared interests and complementary perspectives.",
+        "Every month, we introduce you to one person who shares your interests in movement or mental growth. Whether it's a fellow hiker or someone exploring the same questions.",
       icon: "✨",
     },
     {
       number: "03",
-      title: "Build & Connect",
+      title: "Connect Through Experience",
       description:
-        "Climb a mountain, float down a river, visit an art gallery, or join our monthly members-only events to deepen your network authentically.",
+        "Meet for a hike, join a meditation session, or attend our monthly community events like spa days and forest walks. Real connections happen through shared experiences.",
       icon: "🚀",
     },
   ];
@@ -32,7 +32,7 @@ const HowItWorks = () => {
         <div className="how-it-works__header">
           <h2 className="how-it-works__title">How It Works</h2>
           <p className="how-it-works__subtitle">
-            Simple, thoughtful, and designed for real connections
+            Simple, thoughtful, and designed for authentic human connections
           </p>
         </div>
 
@@ -51,24 +51,6 @@ const HowItWorks = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="how-it-works__features">
-          <div className="how-it-works__feature">
-            <div className="how-it-works__feature-icon">🎯</div>
-            <h4>Interest-Based Matching</h4>
-            <p>Connect over shared passions, not just job titles</p>
-          </div>
-          <div className="how-it-works__feature">
-            <div className="how-it-works__feature-icon">🤝</div>
-            <h4>Monthly 1-on-1 Matches</h4>
-            <p>Quality over quantity with thoughtfully curated introductions</p>
-          </div>
-          <div className="how-it-works__feature">
-            <div className="how-it-works__feature-icon">🎉</div>
-            <h4>Exclusive Monthly Events</h4>
-            <p>Members-only gatherings to foster deeper community bonds</p>
-          </div>
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 .footer {
-  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
   color: white;
   padding: 4rem 0 2rem;
 
@@ -59,7 +59,7 @@
     font-size: 1.5rem;
     font-weight: 800;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    background: linear-gradient(135deg, #d4a574, #b8860b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -116,7 +116,7 @@
     }
 
     &:hover {
-      color: #3b82f6;
+      color: #d4a574;
     }
   }
 
@@ -201,7 +201,7 @@
     }
 
     &:hover {
-      color: #3b82f6;
+      color: #d4a574;
     }
   }
 
@@ -254,7 +254,7 @@
     }
 
     &:hover {
-      background: rgba(59, 130, 246, 0.2);
+      background: rgba(212, 165, 116, 0.2);
       transform: translateY(-2px);
     }
   }

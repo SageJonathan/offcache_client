@@ -6,27 +6,27 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: "Sarah Chen",
-      role: "Product Manager, Stripe",
+      name: "Sarah",
+      role: "Loves hiking & deep conversations",
       quote:
-        "OffCache introduced me to people I actually want to stay in touch with. It's not about collecting business cards—it's about building real relationships.",
-      avatar: "SC",
+        "I was matched with someone who loves hiking as much as I do. We've explored three different trails together and have the most meaningful conversations while walking. It's so much better than awkward coffee chats!",
+      avatar: "S",
       color: "from-pink-500 to-rose-500",
     },
     {
-      name: "Marcus Rodriguez",
-      role: "Engineering Lead, Airbnb",
+      name: "Marcus",
+      role: "Explores mindfulness & philosophy",
       quote:
-        "The monthly events are incredible. I've found mentors, collaborators, and friends—all through genuine conversations about shared interests.",
-      avatar: "MR",
+        "The platform connected me with someone exploring mindfulness and philosophy. We meet weekly for meditation sessions and have deep conversations about personal growth. It's exactly what I was looking for.",
+      avatar: "M",
       color: "from-blue-500 to-cyan-500",
     },
     {
-      name: "Alex Thompson",
-      role: "Founder, Tech Startup",
+      name: "Alex",
+      role: "Passionate about growth & nature",
       quote:
-        "Finally, a networking platform that focuses on who I am as a person, not just my job title. The matches are spot-on every time.",
-      avatar: "AT",
+        "Instead of networking events, I get to climb mountains with my matches. The shared experience of being outdoors and pushing our limits creates such authentic connections.",
+      avatar: "A",
       color: "from-purple-500 to-indigo-500",
     },
   ];
@@ -42,9 +42,9 @@ const Testimonials = () => {
     <section className="testimonials">
       <div className="testimonials__container">
         <div className="testimonials__header">
-          <h2 className="testimonials__title">What Our Members Say</h2>
+          <h2 className="testimonials__title">What Our Humans Say</h2>
           <p className="testimonials__subtitle">
-            Real connections, real stories
+            Real connections through movement and growth
           </p>
         </div>
 
