@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./header.scss";
 
 const Header = () => {
@@ -12,39 +13,43 @@ const Header = () => {
     <header className="header">
       <div className="header__container">
         <div className="header__logo">
-          <h1 className="header__brand">Git Together</h1>
+          <Link to="/" className="header__brand">
+            OffCache
+          </Link>
         </div>
 
         <nav className={`header__nav ${isMenuOpen ? "header__nav--open" : ""}`}>
           <ul className="header__nav-list">
             <li className="header__nav-item">
-              <a href="#how-it-works" className="header__nav-link">
-                How it Works
-              </a>
+              <Link to="/" className="header__nav-link">
+                Home
+              </Link>
             </li>
             <li className="header__nav-item">
-              <a href="#testimonials" className="header__nav-link">
+              <Link to="/community" className="header__nav-link">
                 Community
-              </a>
+              </Link>
             </li>
             <li className="header__nav-item">
-              <a href="#pricing" className="header__nav-link">
+              <Link to="/pricing" className="header__nav-link">
                 Pricing
-              </a>
+              </Link>
             </li>
             <li className="header__nav-item">
-              <a href="#about" className="header__nav-link">
+              <Link to="/about" className="header__nav-link">
                 About
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
 
         <div className="header__actions">
-          <button className="header__btn header__btn--secondary">
+          <Link to="/signin" className="header__btn header__btn--secondary">
             Sign In
-          </button>
-          <button className="header__btn header__btn--primary">Join Now</button>
+          </Link>
+          <Link to="/signup" className="header__btn header__btn--primary">
+            Join Now
+          </Link>
         </div>
 
         <button
