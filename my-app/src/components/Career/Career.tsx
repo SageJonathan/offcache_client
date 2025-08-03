@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ApplicationForm from "./ApplicationForm";
 import "./career.scss";
 
