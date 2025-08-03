@@ -10,7 +10,9 @@ interface User {
   verificationStatus: "verified" | "pending" | "not_verified";
   joinDate: string;
   lastActive: string;
-  location: string;
+  city: string;
+  province: string;
+  country: string;
   plan: "free" | "premium" | "founder";
   eventsAttended: number;
   matchesCompleted: number;
@@ -28,7 +30,9 @@ const Users = () => {
       verificationStatus: "verified",
       joinDate: "2023-06-15",
       lastActive: "2024-01-15T10:30:00Z",
-      location: "Vancouver, BC",
+      city: "Vancouver",
+      province: "British Columbia",
+      country: "Canada",
       plan: "premium",
       eventsAttended: 12,
       matchesCompleted: 8,
@@ -43,7 +47,9 @@ const Users = () => {
       verificationStatus: "verified",
       joinDate: "2023-08-22",
       lastActive: "2024-01-14T14:20:00Z",
-      location: "Vancouver, BC",
+      city: "Toronto",
+      province: "Ontario",
+      country: "Canada",
       plan: "founder",
       eventsAttended: 8,
       matchesCompleted: 6,
@@ -58,7 +64,9 @@ const Users = () => {
       verificationStatus: "pending",
       joinDate: "2023-09-10",
       lastActive: "2024-01-13T09:15:00Z",
-      location: "Vancouver, BC",
+      city: "Calgary",
+      province: "Alberta",
+      country: "Canada",
       plan: "free",
       eventsAttended: 3,
       matchesCompleted: 2,
@@ -73,7 +81,9 @@ const Users = () => {
       verificationStatus: "not_verified",
       joinDate: "2023-07-05",
       lastActive: "2023-12-20T16:45:00Z",
-      location: "Vancouver, BC",
+      city: "Montreal",
+      province: "Quebec",
+      country: "Canada",
       plan: "free",
       eventsAttended: 1,
       matchesCompleted: 0,
@@ -88,7 +98,9 @@ const Users = () => {
       verificationStatus: "verified",
       joinDate: "2023-05-12",
       lastActive: "2024-01-10T11:20:00Z",
-      location: "Vancouver, BC",
+      city: "Seattle",
+      province: "Washington",
+      country: "United States",
       plan: "premium",
       eventsAttended: 15,
       matchesCompleted: 10,
@@ -210,7 +222,10 @@ const Users = () => {
       user.verificationStatus === filterVerification;
     const matchesSearch =
       user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      user.email.toLowerCase().includes(searchTerm.toLowerCase());
+      user.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      user.city.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      user.province.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      user.country.toLowerCase().includes(searchTerm.toLowerCase());
 
     return matchesStatus && matchesVerification && matchesSearch;
   });
@@ -228,7 +243,7 @@ const Users = () => {
         <div className="users__search">
           <input
             type="text"
-            placeholder="Search users by name or email..."
+            placeholder="Search users by name, email, city, province, or country..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="users__search-input"
@@ -296,7 +311,9 @@ const Users = () => {
                   <div className="users__user-details">
                     <h3 className="users__user-name">{user.name}</h3>
                     <p className="users__user-email">{user.email}</p>
-                    <p className="users__user-location">{user.location}</p>
+                    <p className="users__user-location">
+                      {user.city}, {user.province}, {user.country}
+                    </p>
                   </div>
                 </div>
 
@@ -396,7 +413,8 @@ const Users = () => {
                       <strong>Email:</strong> {selectedUser.email}
                     </p>
                     <p>
-                      <strong>Location:</strong> {selectedUser.location}
+                      <strong>Location:</strong> {selectedUser.city},{" "}
+                      {selectedUser.province}, {selectedUser.country}
                     </p>
                     <p>
                       <strong>Status:</strong>{" "}

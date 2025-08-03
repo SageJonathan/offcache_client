@@ -1,4 +1,3 @@
-import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import VisitProfile from "../components/Dashboard/VisitProfile";
 import "../components/Dashboard/visitProfile.scss";
