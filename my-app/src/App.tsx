@@ -12,6 +12,9 @@ import Survey from "./pages/Survey";
 import UserAnalytics from "./pages/UserAnalytics";
 import VisitProfile from "./pages/VisitProfile";
 import Admin from "./pages/Admin";
+import Contact from "./pages/Contact";
+import Career from "./pages/Career";
+import Blog from "./pages/Blog";
 
 function App() {
   return (
@@ -29,6 +32,9 @@ function App() {
         <Route path="/user-analytics" element={<UserAnalytics />} />
         <Route path="/profile/:userId" element={<VisitProfile />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/career" element={<Career />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
       <Footer />
     </BrowserRouter>
