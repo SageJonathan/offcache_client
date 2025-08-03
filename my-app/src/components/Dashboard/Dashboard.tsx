@@ -11,8 +11,8 @@ const Dashboard = () => {
   const sections = [
     { id: "profile", name: "Profile", icon: "👤" },
     { id: "messages", name: "Messages", icon: "💬" },
-    { id: "payments", name: "Payments", icon: "💳" },
     { id: "settings", name: "Settings", icon: "⚙️" },
+    { id: "payments", name: "Payments", icon: "💳" },
   ];
 
   return (

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./profileSection.scss";
 
 const ProfileSection = () => {
@@ -6,6 +7,7 @@ const ProfileSection = () => {
     firstName: "John",
     lastName: "Doe",
     email: "john@example.com",
+    phone: "+1 (555) 123-4567",
     bio: "Love hiking and meditation. Looking for meaningful connections.",
     interests: ["Hiking", "Meditation", "Technology"],
     location: "San Francisco, CA",
@@ -73,6 +75,21 @@ const ProfileSection = () => {
           </div>
 
           <div className="profile__form-group">
+            <label htmlFor="phone" className="profile__label">
+              Phone Number
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={profile.phone}
+              onChange={handleInputChange}
+              className="profile__input"
+              placeholder="+1 (555) 123-4567"
+            />
+          </div>
+
+          <div className="profile__form-group">
             <label htmlFor="location" className="profile__label">
               Location
             </label>
@@ -111,7 +128,12 @@ const ProfileSection = () => {
             </div>
           </div>
 
-          <button className="profile__save-button">Save Changes</button>
+          <div className="profile__actions">
+            <button className="profile__save-button">Save Changes</button>
+            <Link to="/survey" className="profile__survey-link">
+              Re-take Survey
+            </Link>
+          </div>
         </div>
       </div>
     </div>
