@@ -1,4 +1,3 @@
-import React from "react";
 import "./cta.scss";
 
 const CTA = () => {
@@ -6,18 +5,23 @@ const CTA = () => {
     <section className="cta">
       <div className="cta__container">
         <div className="cta__content">
-          <h2 className="cta__title">Forget the Script. <br /> Clear the Cache. <br /> Connect for Real.</h2>
+          <h2 className="cta__title">
+            Forget the Script. <br />
+            Clear the Cache. <br />
+            Connect for Real.
+          </h2>
           <p className="cta__subtitle">
-            Join thousands of tech professionals who've found their tribe
-            through authentic connections
+            Be among the first to experience authentic connections through
+            shared passions. Join our waitlist and get early access when we
+            launch.
           </p>
 
           <div className="cta__buttons">
             <button className="cta__button cta__button--primary">
-              Start Free Trial
+              Join Waitlist
             </button>
             <button className="cta__button cta__button--secondary">
-              Schedule a Demo
+              Learn More
             </button>
           </div>
 
@@ -29,7 +33,7 @@ const CTA = () => {
                   fill="currentColor"
                 />
               </svg>
-              <span>No credit card required</span>
+              <span>Free to join</span>
             </div>
             <div className="cta__feature">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -38,7 +42,7 @@ const CTA = () => {
                   fill="currentColor"
                 />
               </svg>
-              <span>14-day free trial</span>
+              <span>Early access</span>
             </div>
             <div className="cta__feature">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -47,7 +51,7 @@ const CTA = () => {
                   fill="currentColor"
                 />
               </svg>
-              <span>Cancel anytime</span>
+              <span>Quality connections</span>
             </div>
           </div>
         </div>

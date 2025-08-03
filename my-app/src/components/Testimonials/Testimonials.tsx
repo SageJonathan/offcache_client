@@ -6,27 +6,27 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: "Sarah Chen",
-      role: "Product Manager, Stripe",
+      name: "Sarah",
+      role: "Beta Tester",
       quote:
-        "OffCache introduced me to people I actually want to stay in touch with. It's not about collecting business cards—it's about building real relationships.",
-      avatar: "SC",
+        "I was part of the early testing group and the concept is exactly what I've been looking for. Instead of awkward networking events, I got matched with someone who loves hiking as much as I do. The shared experience made conversation flow naturally.",
+      avatar: "S",
       color: "from-pink-500 to-rose-500",
     },
     {
-      name: "Marcus Rodriguez",
-      role: "Engineering Lead, Airbnb",
+      name: "Marcus",
+      role: "Early Access Member",
       quote:
-        "The monthly events are incredible. I've found mentors, collaborators, and friends—all through genuine conversations about shared interests.",
-      avatar: "MR",
+        "The platform's focus on shared interests rather than job titles is refreshing. I was matched with someone exploring mindfulness and we've had the most meaningful conversations about personal growth. Can't wait for the full launch!",
+      avatar: "M",
       color: "from-blue-500 to-cyan-500",
     },
     {
-      name: "Alex Thompson",
-      role: "Founder, Tech Startup",
+      name: "Alex",
+      role: "Founding Member",
       quote:
-        "Finally, a networking platform that focuses on who I am as a person, not just my job title. The matches are spot-on every time.",
-      avatar: "AT",
+        "I've been part of the development process and the attention to quality over quantity is what sets this apart. The curated matching based on shared activities creates authentic connections that traditional networking just can't match.",
+      avatar: "A",
       color: "from-purple-500 to-indigo-500",
     },
   ];
@@ -42,9 +42,9 @@ const Testimonials = () => {
     <section className="testimonials">
       <div className="testimonials__container">
         <div className="testimonials__header">
-          <h2 className="testimonials__title">What Our Members Say</h2>
+          <h2 className="testimonials__title">What Our Beta Testers Say</h2>
           <p className="testimonials__subtitle">
-            Real connections, real stories
+            Early feedback from our founding members
           </p>
         </div>
 

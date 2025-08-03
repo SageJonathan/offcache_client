@@ -1,11 +1,11 @@
+import SignUpC from "../components/Signup/SignupC";
 
-function Signup () {
-    return (
-      <>
-        
-      </>
-    );
-  }
-  
-  export default Signup;
-  
+const SignUp = () => {
+  return (
+    <>
+      <SignUpC />
+    </>
+  );
+};
+
+export default SignUp;
