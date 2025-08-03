@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ProfileSection from "./ProfileSection";
 import MessagesSection from "./MessagesSection";
+import EventsSection from "./EventsSection";
 import PaymentsSection from "./PaymentsSection";
 import SettingsSection from "./SettingsSection";
 import "./dashboard.scss";
@@ -11,6 +12,7 @@ const Dashboard = () => {
   const sections = [
     { id: "profile", name: "Profile", icon: "👤" },
     { id: "messages", name: "Messages", icon: "💬" },
+    { id: "events", name: "Events", icon: "📅" },
     { id: "settings", name: "Settings", icon: "⚙️" },
     { id: "payments", name: "Payments", icon: "💳" },
   ];
@@ -45,6 +47,7 @@ const Dashboard = () => {
         <div className="dashboard__content">
           {activeSection === "profile" && <ProfileSection />}
           {activeSection === "messages" && <MessagesSection />}
+          {activeSection === "events" && <EventsSection />}
           {activeSection === "payments" && <PaymentsSection />}
           {activeSection === "settings" && <SettingsSection />}
         </div>

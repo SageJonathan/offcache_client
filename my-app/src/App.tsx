@@ -25,6 +25,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/survey" element={<Survey />} />
         <Route path="/user-analytics" element={<UserAnalytics />} />
+
       </Routes>
       <Footer />
     </BrowserRouter>
