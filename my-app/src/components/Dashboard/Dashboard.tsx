@@ -6,7 +6,7 @@ import PaymentsSection from "./PaymentsSection";
 import SettingsSection from "./SettingsSection";
 import "./dashboard.scss";
 
-const Dashboard = () => {
+const DashboardC = () => {
   const [activeSection, setActiveSection] = useState("profile");
 
   const sections = [
@@ -56,4 +56,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default DashboardC;
