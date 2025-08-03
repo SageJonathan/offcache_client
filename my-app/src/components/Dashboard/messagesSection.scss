@@ -3,6 +3,14 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
+    @media (max-width: 768px) {
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 480px) {
+      gap: 0.5rem;
+    }
   }
 
   &__item {
@@ -14,6 +22,17 @@
     border: 1px solid rgba(212, 165, 116, 0.15);
     transition: all 0.3s ease;
     cursor: pointer;
+
+    @media (max-width: 768px) {
+      gap: 0.75rem;
+      padding: 0.875rem;
+    }
+
+    @media (max-width: 480px) {
+      gap: 0.5rem;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+    }
 
     &:hover {
       background: rgba(212, 165, 116, 0.05);
@@ -30,6 +49,16 @@
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
+
+    @media (max-width: 768px) {
+      width: 45px;
+      height: 45px;
+    }
+
+    @media (max-width: 480px) {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   &__content {
@@ -47,17 +76,41 @@
     font-weight: 600;
     color: #2d3748;
     margin: 0;
+
+    @media (max-width: 768px) {
+      font-size: 0.875rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.8rem;
+    }
   }
 
   &__timestamp {
     font-size: 0.875rem;
     color: #4a5568;
+
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.75rem;
+    }
   }
 
   &__preview {
     color: #4a5568;
     margin: 0;
     font-size: 0.875rem;
+
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.75rem;
+    }
   }
 
   &__unread-indicator {
@@ -76,6 +129,20 @@
   border-radius: 0.75rem;
   overflow: hidden;
 
+  @media (max-width: 1024px) {
+    height: 550px;
+  }
+
+  @media (max-width: 768px) {
+    height: 500px;
+    border-radius: 0.5rem;
+  }
+
+  @media (max-width: 480px) {
+    height: 450px;
+    border-radius: 0.375rem;
+  }
+
   &__header {
     display: flex;
     align-items: center;
@@ -83,6 +150,14 @@
     padding: 1rem;
     border-bottom: 1px solid rgba(212, 165, 116, 0.15);
     background: white;
+
+    @media (max-width: 768px) {
+      padding: 0.875rem;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0.75rem;
+    }
   }
 
   &__back-button {
@@ -95,6 +170,16 @@
     border-radius: 0.375rem;
     transition: background 0.3s ease;
 
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+      padding: 0.375rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.75rem;
+      padding: 0.25rem;
+    }
+
     &:hover {
       background: rgba(212, 165, 116, 0.1);
     }
@@ -104,6 +189,14 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
+
+    @media (max-width: 768px) {
+      gap: 0.5rem;
+    }
+
+    @media (max-width: 480px) {
+      gap: 0.375rem;
+    }
   }
 
   &__avatar {
@@ -111,6 +204,16 @@
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
+
+    @media (max-width: 768px) {
+      width: 35px;
+      height: 35px;
+    }
+
+    @media (max-width: 480px) {
+      width: 30px;
+      height: 30px;
+    }
   }
 
   &__contact-info {
@@ -123,12 +226,28 @@
     color: #2d3748;
     margin: 0;
     font-size: 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 0.875rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.8rem;
+    }
   }
 
   &__status {
     font-size: 0.75rem;
     color: #48bb78;
     font-weight: 500;
+
+    @media (max-width: 768px) {
+      font-size: 0.7rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.65rem;
+    }
   }
 
   &__messages {
@@ -139,12 +258,30 @@
     flex-direction: column;
     gap: 1rem;
     background: #f7fafc;
+
+    @media (max-width: 768px) {
+      padding: 0.875rem;
+      gap: 0.875rem;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0.75rem;
+      gap: 0.75rem;
+    }
   }
 
   &__message {
     display: flex;
     flex-direction: column;
     max-width: 70%;
+
+    @media (max-width: 768px) {
+      max-width: 75%;
+    }
+
+    @media (max-width: 480px) {
+      max-width: 80%;
+    }
 
     &--own {
       align-self: flex-end;
@@ -162,18 +299,44 @@
     border-radius: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
+
+    @media (max-width: 768px) {
+      padding: 0.625rem 0.875rem;
+      border-radius: 0.875rem;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.75rem;
+    }
   }
 
   &__message-text {
     margin: 0 0 0.25rem 0;
     font-size: 0.875rem;
     line-height: 1.4;
+
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.75rem;
+    }
   }
 
   &__message-time {
     font-size: 0.75rem;
     opacity: 0.7;
     display: block;
+
+    @media (max-width: 768px) {
+      font-size: 0.7rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.65rem;
+    }
   }
 
   &__input {
@@ -182,6 +345,16 @@
     padding: 1rem;
     border-top: 1px solid rgba(212, 165, 116, 0.15);
     background: white;
+
+    @media (max-width: 768px) {
+      gap: 0.5rem;
+      padding: 0.875rem;
+    }
+
+    @media (max-width: 480px) {
+      gap: 0.375rem;
+      padding: 0.75rem;
+    }
   }
 
   &__input-field {
@@ -191,6 +364,18 @@
     border-radius: 1.5rem;
     font-size: 0.875rem;
     transition: border-color 0.3s ease;
+
+    @media (max-width: 768px) {
+      padding: 0.625rem 0.875rem;
+      font-size: 0.8rem;
+      border-radius: 1.25rem;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.75rem;
+      border-radius: 1rem;
+    }
 
     &:focus {
       outline: none;
@@ -209,8 +394,26 @@
     transition: transform 0.3s ease;
     font-size: 0.875rem;
 
+    @media (max-width: 768px) {
+      padding: 0.625rem 1.25rem;
+      font-size: 0.8rem;
+      border-radius: 1.25rem;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0.5rem 1rem;
+      font-size: 0.75rem;
+      border-radius: 1rem;
+    }
+
     &:hover {
       transform: translateY(-1px);
+    }
+
+    @media (max-width: 480px) {
+      &:hover {
+        transform: none;
+      }
     }
   }
 }
