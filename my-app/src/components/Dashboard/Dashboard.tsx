@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ProfileSection from "./ProfileSection";
 import MessagesSection from "./MessagesSection";
 import EventsSection from "./EventsSection";
