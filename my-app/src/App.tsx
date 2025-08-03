@@ -9,6 +9,7 @@ import SignIn from "./pages/SignIn";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import Survey from "./pages/Survey";
+import UserAnalytics from "./pages/UserAnalytics";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/survey" element={<Survey />} />
+        <Route path="/user-analytics" element={<UserAnalytics />} />
       </Routes>
       <Footer />
     </BrowserRouter>

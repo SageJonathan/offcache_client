@@ -133,6 +133,9 @@ const ProfileSection = () => {
             <Link to="/survey" className="profile__survey-link">
               Re-take Survey
             </Link>
+            <Link to="/user-analytics" className="profile__survey-link">
+              User Analytics Survey
+            </Link>
           </div>
         </div>
       </div>
