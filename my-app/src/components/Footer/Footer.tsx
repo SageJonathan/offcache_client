@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Email from "../../assets/icons/email.png";
 import Facebook from "../../assets/icons/facebook.png";
 import Instagram from "../../assets/icons/instagram.png";
@@ -50,16 +51,16 @@ const Footer = () => {
               <h4 className="footer__link-title">Company</h4>
               <ul className="footer__link-list">
                 <li>
-                  <a href="#about">About</a>
+                  <Link to="/about">About</Link>
                 </li>
                 <li>
-                  <a href="#blog">Blog</a>
+                  <Link to="/blog">Blog</Link>
                 </li>
                 <li>
-                  <a href="#careers">Careers</a>
+                  <Link to="/career">Careers</Link>
                 </li>
                 <li>
-                  <a href="#contact">Contact</a>
+                  <Link to="/contact">Contact</Link>
                 </li>
               </ul>
             </div>
