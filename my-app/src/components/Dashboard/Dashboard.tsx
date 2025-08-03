@@ -23,7 +23,6 @@ const DashboardC = () => {
         <div className="dashboard__sidebar">
           <div className="dashboard__sidebar-header">
             <h2 className="dashboard__sidebar-title">Dashboard</h2>
-            <p className="dashboard__sidebar-subtitle">Manage your account</p>
           </div>
 
           <nav className="dashboard__nav">
