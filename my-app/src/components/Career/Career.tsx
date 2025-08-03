@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import ApplicationForm from "./ApplicationForm";
 import "./career.scss";
 
 const Career = () => {
+  const [showApplicationForm, setShowApplicationForm] = useState(false);
+  const [selectedPosition, setSelectedPosition] = useState("");
   const openPositions = [
     {
       id: 1,
@@ -116,7 +119,15 @@ const Career = () => {
                       </span>
                     </div>
                   </div>
-                  <button className="career__position-button">Apply Now</button>
+                  <button
+                    className="career__position-button"
+                    onClick={() => {
+                      setSelectedPosition(position.title);
+                      setShowApplicationForm(true);
+                    }}
+                  >
+                    Apply Now
+                  </button>
                 </div>
                 <p className="career__position-description">
                   {position.description}
@@ -166,6 +177,13 @@ const Career = () => {
           </div>
         </div>
       </div>
+
+      {showApplicationForm && (
+        <ApplicationForm
+          position={selectedPosition}
+          onClose={() => setShowApplicationForm(false)}
+        />
+      )}
     </div>
   );
 };

@@ -1,0 +1,262 @@
+.application-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+}
+
+.application-form {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+
+  @media (max-width: 768px) {
+    max-height: 95vh;
+  }
+}
+
+.application-form__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem 1rem;
+  border-bottom: 1px solid rgba(212, 165, 116, 0.15);
+
+  @media (max-width: 768px) {
+    padding: 1.5rem 1.5rem 1rem;
+  }
+}
+
+.application-form__title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0;
+}
+
+.application-form__close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #718096;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(212, 165, 116, 0.1);
+    color: #2d3748;
+  }
+}
+
+.application-form__content {
+  padding: 2rem;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+}
+
+.application-form__section {
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.application-form__section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(212, 165, 116, 0.2);
+}
+
+.application-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.application-form__field {
+  margin-bottom: 1.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.application-form__label {
+  display: block;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.application-form__input,
+.application-form__textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+
+  &:focus {
+    outline: none;
+    border-color: #d4a574;
+    box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+  }
+
+  &::placeholder {
+    color: #a0aec0;
+  }
+}
+
+.application-form__textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+.application-form__file-upload {
+  position: relative;
+}
+
+.application-form__file-input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.application-form__file-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 2px dashed #d4a574;
+  border-radius: 0.5rem;
+  background: rgba(212, 165, 116, 0.05);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 60px;
+
+  &:hover {
+    background: rgba(212, 165, 116, 0.1);
+    border-color: #b8860b;
+  }
+}
+
+.application-form__file-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.application-form__file-text {
+  color: #4a5568;
+  font-size: 0.875rem;
+}
+
+.application-form__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(212, 165, 116, 0.15);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.application-form__cancel,
+.application-form__submit {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.application-form__cancel {
+  background: #f7fafc;
+  color: #4a5568;
+  border: 2px solid #e2e8f0;
+
+  &:hover {
+    background: #edf2f7;
+    border-color: #cbd5e0;
+  }
+}
+
+.application-form__submit {
+  background: linear-gradient(135deg, #d4a574, #b8860b);
+  color: white;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Scrollbar styling for the form
+.application-form::-webkit-scrollbar {
+  width: 8px;
+}
+
+.application-form::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.application-form::-webkit-scrollbar-thumb {
+  background: #d4a574;
+  border-radius: 4px;
+
+  &:hover {
+    background: #b8860b;
+  }
+}
