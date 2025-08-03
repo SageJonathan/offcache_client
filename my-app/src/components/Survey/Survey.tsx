@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./survey.scss";
 import DemographicsStep from "./DemographicsStep";
 import LocationStep from "./LocationStep";
