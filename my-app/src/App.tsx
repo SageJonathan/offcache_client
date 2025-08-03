@@ -10,6 +10,7 @@ import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import Survey from "./pages/Survey";
 import UserAnalytics from "./pages/UserAnalytics";
+import VisitProfile from "./pages/VisitProfile";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/survey" element={<Survey />} />
         <Route path="/user-analytics" element={<UserAnalytics />} />
-
+        <Route path="/profile/:userId" element={<VisitProfile />} />
       </Routes>
       <Footer />
     </BrowserRouter>
