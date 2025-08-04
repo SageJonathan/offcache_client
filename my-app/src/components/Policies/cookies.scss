@@ -15,11 +15,13 @@
 
   &__header {
     text-align: center;
+    margin-top: 6rem;
     margin-bottom: 3rem;
     padding-bottom: 2rem;
     border-bottom: 2px solid rgba(212, 165, 116, 0.2);
 
     @media (max-width: 768px) {
+      margin-top: 4rem;
       margin-bottom: 2rem;
       padding-bottom: 1.5rem;
     }

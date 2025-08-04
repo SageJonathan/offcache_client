@@ -15,9 +15,11 @@
 
   &__header {
     text-align: center;
+    margin-top: 6rem;
     margin-bottom: 3rem;
 
     @media (max-width: 768px) {
+      margin-top: 4rem;
       margin-bottom: 2rem;
     }
   }
@@ -145,7 +147,12 @@
     &:hover {
       transform: translateY(-4px);
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-      border-color: var(--category-color);
+      border-color: #d4a574;
+      background: linear-gradient(
+        135deg,
+        rgba(212, 165, 116, 0.05),
+        rgba(184, 134, 11, 0.05)
+      );
 
       &::before {
         transform: scaleX(1);
@@ -153,7 +160,7 @@
     }
 
     &--active {
-      border-color: var(--category-color);
+      border-color: #d4a574;
       background: linear-gradient(
         135deg,
         rgba(212, 165, 116, 0.05),

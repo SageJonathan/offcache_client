@@ -40,28 +40,28 @@ const HelpCenter: React.FC = () => {
       title: "Messaging",
       description: "Connect with other members through messaging",
       icon: "💬",
-      color: "#8b4513",
+      color: "#d4a574",
     },
     {
       id: "verification",
       title: "Verification",
       description: "Complete your profile verification process",
       icon: "✅",
-      color: "#228b22",
+      color: "#b8860b",
     },
     {
       id: "payments",
       title: "Payments",
       description: "Manage your subscription and billing",
       icon: "💳",
-      color: "#4169e1",
+      color: "#d4a574",
     },
     {
       id: "safety",
       title: "Safety & Privacy",
       description: "Learn about our safety measures and privacy",
       icon: "🔒",
-      color: "#dc143c",
+      color: "#b8860b",
     },
   ];
 
@@ -272,17 +272,12 @@ const HelpCenter: React.FC = () => {
         <div className="help-center__contact">
           <h2 className="help-center__section-title">Still Need Help?</h2>
           <p className="help-center__contact-text">
-            Can't find what you're looking for? Our support team is here to
-            help.
+            Our support team is here to help.
           </p>
           <div className="help-center__contact-options">
             <a href="/contact" className="help-center__contact-button">
               <span className="help-center__contact-icon">📧</span>
               Contact Support
-            </a>
-            <a href="/career" className="help-center__contact-button">
-              <span className="help-center__contact-icon">💼</span>
-              Join Our Team
             </a>
           </div>
         </div>
