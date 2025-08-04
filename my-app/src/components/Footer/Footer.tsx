@@ -69,16 +69,16 @@ const Footer = () => {
               <h4 className="footer__link-title">Support</h4>
               <ul className="footer__link-list">
                 <li>
-                  <a href="#help">Help Center</a>
+                  <Link to="/help">Help Center</Link>
                 </li>
                 <li>
-                  <a href="#privacy">Privacy Policy</a>
+                  <Link to="/privacy">Privacy Policy</Link>
                 </li>
                 <li>
-                  <a href="#terms">Terms of Service</a>
+                  <Link to="/terms">Terms of Service</Link>
                 </li>
                 <li>
-                  <a href="#cookies">Cookie Policy</a>
+                  <Link to="/cookies">Cookie Policy</Link>
                 </li>
               </ul>
             </div>
