@@ -108,11 +108,40 @@
     }
   }
 
-  &__events {
+  &__gallery {
     padding: 4rem 0;
 
     @media (max-width: 768px) {
       padding: 3rem 0;
+    }
+  }
+
+  &__gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 0;
+    }
+  }
+
+  &__gallery-item {
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+  }
+
+  &__events {
+    padding: 2rem 0;
+
+    @media (max-width: 768px) {
+      padding: 1.5rem 0;
     }
   }
 

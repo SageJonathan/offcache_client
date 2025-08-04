@@ -5,6 +5,51 @@ const CommunityC = () => {
   const [searchCity, setSearchCity] = useState("");
   const [selectedCity, setSelectedCity] = useState("All Cities");
 
+  const galleryPhotos = [
+    {
+      id: 1,
+      image:
+        "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400&h=300&fit=crop",
+      caption: "Community gathering",
+      category: "Connection",
+    },
+    {
+      id: 2,
+      image:
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
+      caption: "Group meditation",
+      category: "Mindfulness",
+    },
+    {
+      id: 3,
+      image:
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+      caption: "Nature walk",
+      category: "Nature",
+    },
+    {
+      id: 4,
+      image:
+        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop",
+      caption: "Beach yoga",
+      category: "Wellness",
+    },
+    {
+      id: 5,
+      image:
+        "https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&h=300&fit=crop",
+      caption: "Hiking group",
+      category: "Movement",
+    },
+    {
+      id: 6,
+      image:
+        "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=400&h=300&fit=crop",
+      caption: "Art exploration",
+      category: "Culture",
+    },
+  ];
+
   const events = [
     {
       id: 1,
@@ -127,6 +172,16 @@ const CommunityC = () => {
       </div>
 
       <div className="community__container">
+        <section className="community__gallery">
+          <div className="community__gallery-grid">
+            {galleryPhotos.map((photo) => (
+              <div key={photo.id} className="community__gallery-item">
+                <img src={photo.image} alt={photo.caption} />
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section className="community__events">
           <div className="community__section-header">
             <h2 className="community__section-title">Upcoming Events</h2>
