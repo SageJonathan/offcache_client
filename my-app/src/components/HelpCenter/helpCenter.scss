@@ -1,0 +1,345 @@
+.help-center {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fefefe 0%, #f8f6f3 100%);
+  padding: 2rem 0;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    @media (max-width: 768px) {
+      padding: 0 1rem;
+    }
+  }
+
+  &__header {
+    text-align: center;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+
+    @media (max-width: 768px) {
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.25rem;
+    color: #4a5568;
+    max-width: 600px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      font-size: 1.125rem;
+    }
+  }
+
+  &__search {
+    margin-bottom: 3rem;
+
+    @media (max-width: 768px) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__search-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  &__search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.25rem;
+    color: #4a5568;
+  }
+
+  &__search-input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border: 2px solid rgba(212, 165, 116, 0.3);
+    border-radius: 1rem;
+    font-size: 1rem;
+    background: white;
+    transition: all 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #d4a574;
+      box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+    }
+
+    &::placeholder {
+      color: #a0aec0;
+    }
+  }
+
+  &__categories {
+    margin-bottom: 4rem;
+
+    @media (max-width: 768px) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 2rem;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+
+  &__category-card {
+    background: white;
+    border: 2px solid rgba(212, 165, 116, 0.2);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--category-color);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      border-color: #d4a574;
+      background: linear-gradient(
+        135deg,
+        rgba(212, 165, 116, 0.05),
+        rgba(184, 134, 11, 0.05)
+      );
+
+      &::before {
+        transform: scaleX(1);
+      }
+    }
+
+    &--active {
+      border-color: #d4a574;
+      background: linear-gradient(
+        135deg,
+        rgba(212, 165, 116, 0.05),
+        rgba(184, 134, 11, 0.05)
+      );
+
+      &::before {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &__category-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  &__category-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+  }
+
+  &__category-description {
+    color: #4a5568;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  &__faq {
+    margin-bottom: 4rem;
+
+    @media (max-width: 768px) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__faq-item {
+    background: white;
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: #d4a574;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    &[open] {
+      border-color: #d4a574;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  &__faq-question {
+    padding: 1.5rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #2d3748;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    transition: all 0.3s ease;
+
+    &::marker {
+      display: none;
+    }
+
+    &::after {
+      content: "▼";
+      position: absolute;
+      right: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.875rem;
+      color: #d4a574;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      background: rgba(212, 165, 116, 0.05);
+    }
+  }
+
+  &__faq-item[open] &__faq-question::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  &__faq-answer {
+    padding: 0 1.5rem 1.5rem;
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 0.875rem;
+  }
+
+  &__empty {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #4a5568;
+  }
+
+  &__empty-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  &__empty-text {
+    font-size: 1.125rem;
+  }
+
+  &__contact {
+    text-align: center;
+    background: white;
+    border-radius: 1rem;
+    padding: 3rem 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+    @media (max-width: 768px) {
+      padding: 2rem 1rem;
+    }
+  }
+
+  &__contact-text {
+    color: #4a5568;
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__contact-options {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__contact-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #d4a574, #b8860b);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    justify-content: center;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(212, 165, 116, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+
+  &__contact-icon {
+    font-size: 1.25rem;
+  }
+}

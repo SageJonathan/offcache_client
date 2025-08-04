@@ -15,6 +15,10 @@ import Admin from "./pages/Admin";
 import Contact from "./pages/Contact";
 import Career from "./pages/Career";
 import Blog from "./pages/Blog";
+import HelpCenter from "./components/HelpCenter/HelpCenter";
+import Privacy from "./components/Policies/Privacy";
+import Terms from "./components/Policies/Terms";
+import Cookies from "./components/Policies/Cookies";
 
 function App() {
   return (
@@ -35,6 +39,10 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/career" element={<Career />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/help" element={<HelpCenter />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/cookies" element={<Cookies />} />
       </Routes>
       <Footer />
     </BrowserRouter>
