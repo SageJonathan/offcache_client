@@ -7,52 +7,50 @@ const PricingC = () => {
   const plans = [
     {
       name: "Early Access",
-      price: { monthly: 12, annual: 120 },
-      description: "Perfect for those who want to be first",
+      price: { monthly: 0, annual: 0 },
+      description: "Limited time - first 3 months free",
       features: [
-        "Join the waitlist",
-        "Early access to beta",
+        "Free for first 3 months after launch",
+        "Then only $10/month",
+        "Monthly 1-on-1 matches",
+        "Access to community events",
+        "Standard matching algorithm",
         "Founding member status",
+        "Early access to new features",
+      ],
+      popular: false,
+      comingSoon: false,
+      special: "Limited Time",
+    },
+    {
+      name: "Member",
+      price: { monthly: 12, annual: 120 },
+      description: "Standard access for everyone",
+      features: [
         "Monthly 1-on-1 matches",
         "Access to all community events",
-        "15% off premium events",
         "Standard matching algorithm",
+        "Member benefits",
+        "Community participation",
+        "Standard support",
       ],
       popular: false,
       comingSoon: false,
     },
     {
-      name: "Founder",
+      name: "Premium",
       price: { monthly: 25, annual: 250 },
-      description: "For those who want to build something meaningful",
+      description: "For investors, founders & entrepreneurs",
       features: [
-        "Everything in Early Access",
-        "Unlimited matches",
-        "Priority event access",
-        "Direct founder access",
-        "Premium matching algorithm",
-        "Free premium events (2/month)",
+        "Everything in Member plan",
+        "Advanced matching algorithm",
+        "Exclusive premium events",
+        "Yearly founder's international getaway",
+        "Priority support",
         "Early feature access",
-        "Community leadership opportunities",
       ],
       popular: true,
       comingSoon: false,
-    },
-    {
-      name: "Community",
-      price: { monthly: 18, annual: 180 },
-      description: "Full access to everything we offer",
-      features: [
-        "Monthly 1-on-1 matches",
-        "Access to all community events",
-        "Standard support",
-        "Member benefits",
-        "Premium events (full price)",
-        "Standard matching algorithm",
-        "Community participation",
-      ],
-      popular: false,
-      comingSoon: true,
     },
   ];
 
@@ -60,7 +58,7 @@ const PricingC = () => {
     {
       question: "How does the matching work?",
       answer:
-        "We use a combination of your interests, values, and preferences to match you with like-minded individuals who share your curiosity for movement, mindfulness, and growth.",
+        "We use a combination of your interests, values, and preferences to match you with like-minded individuals who share your curiosity for movement, mindfulness, and growth. Premium members can also specify job titles and experience levels they want to connect with.",
     },
     {
       question: "What if I don't connect with my match?",
@@ -70,7 +68,12 @@ const PricingC = () => {
     {
       question: "Are the events included in my membership?",
       answer:
-        "All members get access to community events. Founder members get 2 free premium events per month, Early Access gets 15% off premium events, and Community members pay full price for premium events.",
+        "All members get access to community events anywhere in the world. We keep events affordable while ensuring quality experiences.",
+    },
+    {
+      question: "What's the difference between Member and Premium?",
+      answer:
+        "Member gives you standard access to monthly matches and community events. Premium adds advanced matching with job title parameters, exclusive premium events, and access to the yearly founder's international getaway.",
     },
     {
       question: "Can I cancel anytime?",
@@ -128,6 +131,11 @@ const PricingC = () => {
               {plan.popular && (
                 <div className="pricing__plan-badge">Most Popular</div>
               )}
+              {plan.special && (
+                <div className="pricing__plan-badge pricing__plan-badge--special">
+                  {plan.special}
+                </div>
+              )}
               {plan.comingSoon && (
                 <div className="pricing__plan-badge pricing__plan-badge--coming-soon">
                   Coming Soon
@@ -138,17 +146,24 @@ const PricingC = () => {
                 <h3 className="pricing__plan-name">{plan.name}</h3>
                 <p className="pricing__plan-description">{plan.description}</p>
                 <div className="pricing__plan-price">
-                  <span className="pricing__plan-currency">$</span>
-                  <span className="pricing__plan-amount">
-                    {isAnnual ? plan.price.annual : plan.price.monthly}
-                  </span>
-                  <span className="pricing__plan-period">
-                    {plan.price.monthly === 0
-                      ? ""
-                      : isAnnual
-                      ? "/year"
-                      : "/month"}
-                  </span>
+                  {plan.price.monthly === 0 ? (
+                    <div className="pricing__plan-free">
+                      <span className="pricing__plan-free-text">Free</span>
+                      <span className="pricing__plan-free-subtext">
+                        First 3 months
+                      </span>
+                    </div>
+                  ) : (
+                    <>
+                      <span className="pricing__plan-currency">$</span>
+                      <span className="pricing__plan-amount">
+                        {isAnnual ? plan.price.annual : plan.price.monthly}
+                      </span>
+                      <span className="pricing__plan-period">
+                        {isAnnual ? "/year" : "/month"}
+                      </span>
+                    </>
+                  )}
                 </div>
               </div>
 
@@ -177,7 +192,7 @@ const PricingC = () => {
                 {plan.comingSoon
                   ? "Coming Soon"
                   : plan.price.monthly === 0
-                  ? "Join Waitlist"
+                  ? "Get Early Access"
                   : "Get Started"}
               </button>
             </div>

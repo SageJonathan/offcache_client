@@ -1,3 +1,13 @@
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
 .pricing {
   min-height: 100vh;
   background: linear-gradient(135deg, #fefefe 0%, #f8f6f3 100%);
@@ -186,6 +196,11 @@
     &--coming-soon {
       background: linear-gradient(135deg, #a0aec0, #718096);
     }
+
+    &--special {
+      background: linear-gradient(135deg, #f56565, #e53e3e);
+      animation: pulse 2s infinite;
+    }
   }
 
   &__plan-header {
@@ -224,6 +239,24 @@
   }
 
   &__plan-period {
+    font-size: 1rem;
+    color: #4a5568;
+  }
+
+  &__plan-free {
+    text-align: center;
+  }
+
+  &__plan-free-text {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+  }
+
+  &__plan-free-subtext {
+    display: block;
     font-size: 1rem;
     color: #4a5568;
   }
