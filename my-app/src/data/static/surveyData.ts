@@ -22,12 +22,18 @@ export const physicalActivities = [
   { key: "tennis", name: "Tennis", icon: "🎾" },
   { key: "yoga", name: "Yoga", icon: "🧘‍♀️" },
   { key: "dance", name: "Dance", icon: "💃" },
+  { key: "volleyball", name: "Volleyball", icon: "🏐" },
+  { key: "golf", name: "Golf", icon: "⛳" },
+  { key: "surfing", name: "Surfing", icon: "🏄‍♂️" },
+  { key: "paddleboarding", name: "Paddleboarding", icon: "🏄‍♀️" },
+  { key: "badminton", name: "Badminton", icon: "🏸" },
+  { key: "rowing", name: "Rowing", icon: "🚣‍♂️" },
+  { key: "ultimate", name: "Ultimate Frisbee", icon: "🥏" },
 ];
 
 export const mentalActivities = [
   { key: "reading", name: "Reading", icon: "📚" },
   { key: "writing", name: "Writing", icon: "✍️" },
-  { key: "coding", name: "Coding/Programming", icon: "💻" },
   { key: "gaming", name: "Gaming", icon: "🎮" },
   { key: "chess", name: "Chess", icon: "♟️" },
   { key: "puzzles", name: "Puzzles", icon: "🧩" },
@@ -37,6 +43,21 @@ export const mentalActivities = [
   { key: "photography", name: "Photography", icon: "📸" },
   { key: "languages", name: "Languages", icon: "🗣️" },
   { key: "theatre", name: "Improv / Theatre Games", icon: "🎭" },
+  { key: "boardGames", name: "Board Games", icon: "🎲" },
+];
+
+export const careerInterests = [
+  { key: "ai", name: "AI & Machine Learning", icon: "🤖" },
+  { key: "blockchain", name: "Blockchain/Crypto", icon: "₿" },
+  { key: "dataScience", name: "Data Science", icon: "📊" },
+  { key: "webDev", name: "Web Development", icon: "🌐" },
+  { key: "mobileDev", name: "Mobile Development", icon: "📱" },
+  { key: "cybersecurity", name: "Cybersecurity", icon: "🔒" },
+  { key: "startups", name: "Startups & Entrepreneurship", icon: "🚀" },
+  { key: "investing", name: "Investing & Finance", icon: "📈" },
+  { key: "quantum", name: "Quantum Computing", icon: "⚛️" },
+  { key: "robotics", name: "Robotics", icon: "🤖" },
+  { key: "vr", name: "VR/AR", icon: "🥽" },
 ];
 
 export const allActivities = [
@@ -96,6 +117,5 @@ export const times = [
   "Early Evening (6PM-8PM)",
   "Late Evening (8PM-10PM)",
   "Night (10PM-12AM)",
-  "Late Night (12AM-2AM)",
-  "Early Dawn (2AM-6AM)",
+  "Anytime",
 ];

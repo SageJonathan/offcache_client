@@ -414,7 +414,7 @@ export const userAnalyticsQuestions = {
     },
     {
       key: "dreamCountry",
-      label: "Dream Country to Live In",
+      label: "Dream Destination",
       type: "select",
       options: [
         "Afghanistan",
@@ -688,7 +688,6 @@ export const userAnalyticsQuestions = {
         "Social Media",
         "Friend/Family",
         "Online Search",
-        "Advertisement",
         "Event/Meetup",
         "Other",
       ],
@@ -701,7 +700,6 @@ export const userAnalyticsQuestions = {
         "Make new friends",
         "Find activity partners",
         "Professional networking",
-        "Romantic relationships",
         "Learn new skills",
         "Other",
       ],
@@ -756,12 +754,12 @@ export const userAnalyticsQuestions = {
     },
     {
       key: "willingnessToPay",
-      label: "Would you be willing to pay for premium features?",
+      label: "Do you think our pricing is fair?",
       type: "select",
       options: [
-        "Yes, definitely",
-        "Maybe, depending on features",
-        "No, prefer free",
+        "Yes, the pricing is fair",
+        "I would pay more for better features",
+        "The pricing is too high",
         "Not sure yet",
       ],
     },

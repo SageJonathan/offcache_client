@@ -7,12 +7,12 @@ import SettingsSection from "./SettingsSection";
 import "./dashboard.scss";
 
 const DashboardC = () => {
-  const [activeSection, setActiveSection] = useState("profile");
+  const [activeSection, setActiveSection] = useState("messages");
 
   const sections = [
-    { id: "profile", name: "Profile", icon: "👤" },
     { id: "messages", name: "Messages", icon: "💬" },
     { id: "events", name: "Events", icon: "📅" },
+    { id: "profile", name: "Profile", icon: "👤" },
     { id: "settings", name: "Settings", icon: "⚙️" },
     { id: "payments", name: "Payments", icon: "💳" },
   ];
