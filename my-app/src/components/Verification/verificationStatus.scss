@@ -1,0 +1,131 @@
+.verification-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid;
+  background: white;
+  transition: all 0.3s ease;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+  }
+
+  &__icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  &__info {
+    flex: 1;
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem 0;
+  }
+
+  &__description {
+    font-size: 0.875rem;
+    color: #4a5568;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  &__btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #d4a574, #b8860b);
+    color: white;
+    flex-shrink: 0;
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(212, 165, 116, 0.3);
+    }
+  }
+
+  // Status Variations
+  &--success {
+    border-color: #48bb78;
+    background: linear-gradient(135deg, #f0fff4, #e6fffa);
+    color: #22543d;
+
+    .verification-status__title {
+      color: #22543d;
+    }
+  }
+
+  &--warning {
+    border-color: #ed8936;
+    background: linear-gradient(135deg, #fffbeb, #fef5e7);
+    color: #744210;
+
+    .verification-status__title {
+      color: #744210;
+    }
+  }
+
+  &--error {
+    border-color: #e53e3e;
+    background: linear-gradient(135deg, #fed7d7, #feb2b2);
+    color: #742a2a;
+
+    .verification-status__title {
+      color: #742a2a;
+    }
+  }
+
+  &--default {
+    border-color: #e2e8f0;
+    background: linear-gradient(135deg, #f7fafc, #edf2f7);
+    color: #4a5568;
+
+    .verification-status__title {
+      color: #2d3748;
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+
+    &__content {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    &__btn {
+      width: 100%;
+      padding: 0.75rem 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.875rem;
+
+    &__icon {
+      font-size: 1.25rem;
+    }
+
+    &__title {
+      font-size: 0.875rem;
+    }
+
+    &__description {
+      font-size: 0.8rem;
+    }
+  }
+}
