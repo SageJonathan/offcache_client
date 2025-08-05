@@ -4,7 +4,10 @@ import DemographicsStep from "./DemographicsStep";
 import LocationStep from "./LocationStep";
 import PhysicalActivitiesStep from "./PhysicalActivitiesStep";
 import MentalActivitiesStep from "./MentalActivitiesStep";
+import CareerInterestsStep from "./CareerInterestsStep";
 import SocialPreferencesStep from "./SocialPreferencesStep";
+import AvailabilityStep from "./AvailabilityStep";
+import EventPreferencesStep from "./EventPreferencesStep";
 import ScheduleStep from "./ScheduleStep";
 import TopActivitiesStep from "./TopActivitiesStep";
 
@@ -38,11 +41,18 @@ const Survey = () => {
     tennis: false,
     yoga: false,
     dance: false,
+    volleyball: false,
+    golf: false,
+    surfing: false,
+    SUP: false,
+    badminton: false,
+    tableTennis: false,
+    rowing: false,
+    ultimate: false,
 
     // Mental Activities (Yes/No)
     reading: false,
     writing: false,
-    coding: false,
     gaming: false,
     chess: false,
     puzzles: false,
@@ -52,21 +62,52 @@ const Survey = () => {
     photography: false,
     languages: false,
     theatre: false,
+    podcasts: false,
+    boardGames: false,
+    escapeRooms: false,
+    trivia: false,
+    debate: false,
+    philosophy: false,
+    psychology: false,
+    neuroscience: false,
 
+    // Career Interests (Yes/No)
+    coding: false,
+    ai: false,
+    blockchain: false,
+    dataScience: false,
+    webDev: false,
+    mobileDev: false,
+    cybersecurity: false,
+    startups: false,
+    investing: false,
+    quantum: false,
+    robotics: false,
+    vr: false,
+    "3dPrinting": false,
+    drones: false,
     // Social Preferences
     socialStyle: "",
     groupSize: "",
     meetingStyle: "",
 
+    // Availability
+    availability: {},
+
+    // Event Preferences
+    multiDayEvents: "",
+    localTravel: "",
+    internationalTravel: "",
+    travelBudget: "",
+
     // Schedule
-    availability: [],
     timePreference: "",
 
     // Top 5 Activities
     topActivities: [],
   });
 
-  const totalSteps = 7;
+  const totalSteps = 10;
 
   const handleInputChange = (field: string, value: any) => {
     setSurveyData((prev) => ({
@@ -116,14 +157,29 @@ const Survey = () => {
         );
       case 5:
         return (
+          <CareerInterestsStep data={surveyData} onChange={handleInputChange} />
+        );
+      case 6:
+        return (
           <SocialPreferencesStep
             data={surveyData}
             onChange={handleInputChange}
           />
         );
-      case 6:
-        return <ScheduleStep data={surveyData} onChange={handleInputChange} />;
       case 7:
+        return (
+          <AvailabilityStep data={surveyData} onChange={handleInputChange} />
+        );
+      case 8:
+        return (
+          <EventPreferencesStep
+            data={surveyData}
+            onChange={handleInputChange}
+          />
+        );
+      case 9:
+        return <ScheduleStep data={surveyData} onChange={handleInputChange} />;
+      case 10:
         return (
           <TopActivitiesStep data={surveyData} onChange={handleInputChange} />
         );
