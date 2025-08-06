@@ -1,3 +1,13 @@
+// =============================================================================
+// DESIGN SYSTEM IMPORTS
+// =============================================================================
+@import "variables";
+@import "mixins";
+
+// =============================================================================
+// GLOBAL RESET & BASE STYLES
+// =============================================================================
+
 * {
   margin: 0;
   padding: 0;
@@ -8,21 +18,14 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  @include font-family(primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @include text-color(primary);
+  @include bg-color(primary);
 }
 
 a {
@@ -30,8 +33,247 @@ a {
   text-decoration: none;
 }
 
+// =============================================================================
+// UTILITY CLASSES
+// =============================================================================
+
+// Typography utilities
+.text-primary {
+  @include text-color(primary);
+}
+.text-secondary {
+  @include text-color(secondary);
+}
+.text-tertiary {
+  @include text-color(tertiary);
+}
+.text-muted {
+  @include text-color(muted);
+}
+.text-accent {
+  @include text-color(accent);
+}
+.text-inverse {
+  @include text-color(inverse);
+}
+
+.heading-1 {
+  @include heading-1;
+}
+.heading-2 {
+  @include heading-2;
+}
+.heading-3 {
+  @include heading-3;
+}
+.heading-4 {
+  @include heading-4;
+}
+.heading-5 {
+  @include heading-5;
+}
+.heading-6 {
+  @include heading-6;
+}
+
+.body-large {
+  @include body-large;
+}
+.body-medium {
+  @include body-medium;
+}
+.body-small {
+  @include body-small;
+}
+.caption {
+  @include caption;
+}
+
+// Background utilities
+.bg-primary {
+  @include bg-color(primary);
+}
+.bg-secondary {
+  @include bg-color(secondary);
+}
+.bg-tertiary {
+  @include bg-color(tertiary);
+}
+.bg-dark {
+  @include bg-color(dark);
+}
+
+// Spacing utilities
+.p-xs {
+  @include padding(xs);
+}
+.p-sm {
+  @include padding(sm);
+}
+.p-md {
+  @include padding(md);
+}
+.p-lg {
+  @include padding(lg);
+}
+.p-xl {
+  @include padding(xl);
+}
+
+.m-xs {
+  @include margin(xs);
+}
+.m-sm {
+  @include margin(sm);
+}
+.m-md {
+  @include margin(md);
+}
+.m-lg {
+  @include margin(lg);
+}
+.m-xl {
+  @include margin(xl);
+}
+
+// Layout utilities
+.flex-center {
+  @include flex-center;
+}
+.flex-between {
+  @include flex-between;
+}
+.flex-start {
+  @include flex-start;
+}
+.flex-end {
+  @include flex-end;
+}
+.flex-column {
+  @include flex-column;
+}
+
+// Button utilities
+.btn-primary {
+  @include button-primary;
+}
+.btn-secondary {
+  @include button-secondary;
+}
+.btn-ghost {
+  @include button-ghost;
+}
+
+// Card utilities
+.card-base {
+  @include card-base;
+}
+
+// Form utilities
+.input-base {
+  @include input-base;
+}
+
+// =============================================================================
+// RESPONSIVE UTILITIES
+// =============================================================================
+
+// Generate responsive utilities for each breakpoint
+@each $breakpoint, $value in $breakpoints {
+  @include respond-to($breakpoint) {
+    .#{$breakpoint}\:text-primary {
+      @include text-color(primary);
+    }
+    .#{$breakpoint}\:text-secondary {
+      @include text-color(secondary);
+    }
+    .#{$breakpoint}\:text-tertiary {
+      @include text-color(tertiary);
+    }
+    .#{$breakpoint}\:text-muted {
+      @include text-color(muted);
+    }
+    .#{$breakpoint}\:text-accent {
+      @include text-color(accent);
+    }
+    .#{$breakpoint}\:text-inverse {
+      @include text-color(inverse);
+    }
+
+    .#{$breakpoint}\:bg-primary {
+      @include bg-color(primary);
+    }
+    .#{$breakpoint}\:bg-secondary {
+      @include bg-color(secondary);
+    }
+    .#{$breakpoint}\:bg-tertiary {
+      @include bg-color(tertiary);
+    }
+    .#{$breakpoint}\:bg-dark {
+      @include bg-color(dark);
+    }
+
+    .#{$breakpoint}\:p-xs {
+      @include padding(xs);
+    }
+    .#{$breakpoint}\:p-sm {
+      @include padding(sm);
+    }
+    .#{$breakpoint}\:p-md {
+      @include padding(md);
+    }
+    .#{$breakpoint}\:p-lg {
+      @include padding(lg);
+    }
+    .#{$breakpoint}\:p-xl {
+      @include padding(xl);
+    }
+
+    .#{$breakpoint}\:m-xs {
+      @include margin(xs);
+    }
+    .#{$breakpoint}\:m-sm {
+      @include margin(sm);
+    }
+    .#{$breakpoint}\:m-md {
+      @include margin(md);
+    }
+    .#{$breakpoint}\:m-lg {
+      @include margin(lg);
+    }
+    .#{$breakpoint}\:m-xl {
+      @include margin(xl);
+    }
+
+    .#{$breakpoint}\:flex-center {
+      @include flex-center;
+    }
+    .#{$breakpoint}\:flex-between {
+      @include flex-between;
+    }
+    .#{$breakpoint}\:flex-start {
+      @include flex-start;
+    }
+    .#{$breakpoint}\:flex-end {
+      @include flex-end;
+    }
+    .#{$breakpoint}\:flex-column {
+      @include flex-column;
+    }
+  }
+}
+
+// =============================================================================
+// DARK MODE SUPPORT
+// =============================================================================
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+
+  body {
+    @include text-color(inverse);
+    @include bg-color(dark);
   }
 }

@@ -1,0 +1,508 @@
+// =============================================================================
+// RESPONSIVE MIXINS
+// =============================================================================
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$breakpoint}";
+  }
+}
+
+@mixin respond-below($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint) - 1px) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$breakpoint}";
+  }
+}
+
+@mixin respond-between($min, $max) {
+  @if map-has-key($breakpoints, $min) and map-has-key($breakpoints, $max) {
+    @media (min-width: map-get($breakpoints, $min)) and (max-width: map-get($breakpoints, $max) - 1px) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$min} or #{$max}";
+  }
+}
+
+// =============================================================================
+// TYPOGRAPHY MIXINS
+// =============================================================================
+
+@mixin font-family($family: primary) {
+  @if $family == primary {
+    font-family: $font-family-primary;
+  } @else if $family == secondary {
+    font-family: $font-family-secondary;
+  } @else if $family == mono {
+    font-family: $font-family-mono;
+  }
+}
+
+@mixin font-size($size) {
+  @if $size == xs {
+    font-size: $font-size-xs;
+  } @else if $size == sm {
+    font-size: $font-size-sm;
+  } @else if $size == base {
+    font-size: $font-size-base;
+  } @else if $size == lg {
+    font-size: $font-size-lg;
+  } @else if $size == xl {
+    font-size: $font-size-xl;
+  } @else if $size == 2xl {
+    font-size: $font-size-2xl;
+  } @else if $size == 3xl {
+    font-size: $font-size-3xl;
+  } @else if $size == 4xl {
+    font-size: $font-size-4xl;
+  } @else if $size == 5xl {
+    font-size: $font-size-5xl;
+  } @else if $size == 6xl {
+    font-size: $font-size-6xl;
+  }
+}
+
+@mixin font-weight($weight) {
+  @if $weight == light {
+    font-weight: $font-weight-light;
+  } @else if $weight == normal {
+    font-weight: $font-weight-normal;
+  } @else if $weight == medium {
+    font-weight: $font-weight-medium;
+  } @else if $weight == semibold {
+    font-weight: $font-weight-semibold;
+  } @else if $weight == bold {
+    font-weight: $font-weight-bold;
+  } @else if $weight == extrabold {
+    font-weight: $font-weight-extrabold;
+  }
+}
+
+@mixin line-height($height) {
+  @if $height == tight {
+    line-height: $line-height-tight;
+  } @else if $height == normal {
+    line-height: $line-height-normal;
+  } @else if $height == relaxed {
+    line-height: $line-height-relaxed;
+  }
+}
+
+@mixin text-style(
+  $size: base,
+  $weight: normal,
+  $height: normal,
+  $family: primary
+) {
+  @include font-size($size);
+  @include font-weight($weight);
+  @include line-height($height);
+  @include font-family($family);
+}
+
+// Typography presets
+@mixin heading-1 {
+  @include text-style(4xl, bold, tight);
+  color: $text-primary;
+}
+
+@mixin heading-2 {
+  @include text-style(3xl, semibold, tight);
+  color: $text-primary;
+}
+
+@mixin heading-3 {
+  @include text-style(2xl, semibold, tight);
+  color: $text-primary;
+}
+
+@mixin heading-4 {
+  @include text-style(xl, semibold, tight);
+  color: $text-primary;
+}
+
+@mixin heading-5 {
+  @include text-style(lg, semibold, tight);
+  color: $text-primary;
+}
+
+@mixin heading-6 {
+  @include text-style(base, semibold, tight);
+  color: $text-primary;
+}
+
+@mixin body-large {
+  @include text-style(lg, normal, normal);
+  color: $text-secondary;
+}
+
+@mixin body-medium {
+  @include text-style(base, normal, normal);
+  color: $text-secondary;
+}
+
+@mixin body-small {
+  @include text-style(sm, normal, normal);
+  color: $text-tertiary;
+}
+
+@mixin caption {
+  @include text-style(xs, normal, normal);
+  color: $text-muted;
+}
+
+// =============================================================================
+// COLOR MIXINS
+// =============================================================================
+
+@mixin text-color($color) {
+  @if $color == primary {
+    color: $text-primary;
+  } @else if $color == secondary {
+    color: $text-secondary;
+  } @else if $color == tertiary {
+    color: $text-tertiary;
+  } @else if $color == muted {
+    color: $text-muted;
+  } @else if $color == inverse {
+    color: $text-inverse;
+  } @else if $color == success {
+    color: $success-color;
+  } @else if $color == error {
+    color: $error-color;
+  } @else if $color == warning {
+    color: $warning-color;
+  } @else if $color == info {
+    color: $info-color;
+  }
+}
+
+@mixin bg-color($color) {
+  @if $color == primary {
+    background-color: $bg-primary;
+  } @else if $color == secondary {
+    background-color: $bg-secondary;
+  } @else if $color == tertiary {
+    background-color: $bg-tertiary;
+  } @else if $color == dark {
+    background-color: $bg-dark;
+  } @else if $color == success {
+    background-color: $success-color;
+  } @else if $color == error {
+    background-color: $error-color;
+  } @else if $color == warning {
+    background-color: $warning-color;
+  } @else if $color == info {
+    background-color: $info-color;
+  }
+}
+
+// =============================================================================
+// SPACING MIXINS
+// =============================================================================
+
+@mixin spacing($property, $size) {
+  @if $size == xs {
+    #{$property}: $spacing-xs;
+  } @else if $size == sm {
+    #{$property}: $spacing-sm;
+  } @else if $size == md {
+    #{$property}: $spacing-md;
+  } @else if $size == lg {
+    #{$property}: $spacing-lg;
+  } @else if $size == xl {
+    #{$property}: $spacing-xl;
+  } @else if $size == 2xl {
+    #{$property}: $spacing-2xl;
+  } @else if $size == 3xl {
+    #{$property}: $spacing-3xl;
+  } @else if $size == 4xl {
+    #{$property}: $spacing-4xl;
+  }
+}
+
+@mixin padding($size) {
+  @include spacing(padding, $size);
+}
+
+@mixin margin($size) {
+  @include spacing(margin, $size);
+}
+
+@mixin padding-y($size) {
+  @include spacing(padding-top, $size);
+  @include spacing(padding-bottom, $size);
+}
+
+@mixin padding-x($size) {
+  @include spacing(padding-left, $size);
+  @include spacing(padding-right, $size);
+}
+
+@mixin margin-y($size) {
+  @include spacing(margin-top, $size);
+  @include spacing(margin-bottom, $size);
+}
+
+@mixin margin-x($size) {
+  @include spacing(margin-left, $size);
+  @include spacing(margin-right, $size);
+}
+
+// =============================================================================
+// BORDER MIXINS
+// =============================================================================
+
+@mixin border-radius($size) {
+  @if $size == sm {
+    border-radius: $border-radius-sm;
+  } @else if $size == md {
+    border-radius: $border-radius-md;
+  } @else if $size == lg {
+    border-radius: $border-radius-lg;
+  } @else if $size == xl {
+    border-radius: $border-radius-xl;
+  } @else if $size == 2xl {
+    border-radius: $border-radius-2xl;
+  } @else if $size == full {
+    border-radius: $border-radius-full;
+  }
+}
+
+@mixin border($color: $border-light, $width: 1px) {
+  border: $width solid $color;
+}
+
+@mixin border-top($color: $border-light, $width: 1px) {
+  border-top: $width solid $color;
+}
+
+@mixin border-bottom($color: $border-light, $width: 1px) {
+  border-bottom: $width solid $color;
+}
+
+@mixin border-left($color: $border-light, $width: 1px) {
+  border-left: $width solid $color;
+}
+
+@mixin border-right($color: $border-light, $width: 1px) {
+  border-right: $width solid $color;
+}
+
+// =============================================================================
+// SHADOW MIXINS
+// =============================================================================
+
+@mixin shadow($size) {
+  @if $size == sm {
+    box-shadow: $shadow-sm;
+  } @else if $size == md {
+    box-shadow: $shadow-md;
+  } @else if $size == lg {
+    box-shadow: $shadow-lg;
+  } @else if $size == xl {
+    box-shadow: $shadow-xl;
+  }
+}
+
+// =============================================================================
+// TRANSITION MIXINS
+// =============================================================================
+
+@mixin transition($property: all, $duration: normal) {
+  @if $duration == fast {
+    transition: $property $transition-fast;
+  } @else if $duration == normal {
+    transition: $property $transition-normal;
+  } @else if $duration == slow {
+    transition: $property $transition-slow;
+  }
+}
+
+// =============================================================================
+// LAYOUT MIXINS
+// =============================================================================
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin flex-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absolute-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// =============================================================================
+// BUTTON MIXINS
+// =============================================================================
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  @include padding(md);
+  @include border-radius(md);
+  @include font-weight(medium);
+  @include text-style(sm, medium, normal);
+  @include transition(all, fast);
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+@mixin button-primary {
+  @include button-base;
+  background-color: $primary-color;
+  color: $white;
+
+  &:hover:not(:disabled) {
+    background-color: $primary-dark;
+  }
+}
+
+@mixin button-secondary {
+  @include button-base;
+  background-color: $gray-100;
+  color: $text-primary;
+  @include border($border-light);
+
+  &:hover:not(:disabled) {
+    background-color: $gray-200;
+  }
+}
+
+@mixin button-ghost {
+  @include button-base;
+  background-color: transparent;
+  color: $text-primary;
+
+  &:hover:not(:disabled) {
+    background-color: $gray-100;
+  }
+}
+
+// =============================================================================
+// CARD MIXINS
+// =============================================================================
+
+@mixin card-base {
+  @include bg-color(primary);
+  @include border-radius(lg);
+  @include shadow(md);
+  @include padding(lg);
+  @include border($border-light);
+}
+
+// =============================================================================
+// FORM MIXINS
+// =============================================================================
+
+@mixin input-base {
+  @include padding(md);
+  @include border-radius(md);
+  @include border($border-medium);
+  @include text-style(base, normal, normal);
+  @include transition(border-color, fast);
+  background-color: $white;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+  }
+
+  &:disabled {
+    background-color: $gray-100;
+    cursor: not-allowed;
+  }
+}
+
+// =============================================================================
+// UTILITY MIXINS
+// =============================================================================
+
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: percentage($height / $width);
+  }
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

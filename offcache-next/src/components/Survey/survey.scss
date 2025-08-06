@@ -1,865 +1,485 @@
 .survey {
   min-height: 100vh;
-  background: linear-gradient(135deg, #fefefe 0%, #f8f6f3 100%);
-  padding: 6rem 0 2rem 0;
+  background: $bg-gradient;
+  @include padding-y(4xl);
 
   &__container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 2rem;
+    @include padding-x(xl);
 
-    @media (max-width: 1024px) {
+    @include respond-below(lg) {
       max-width: 90%;
-      padding: 0 1.5rem;
+      @include padding-x(lg);
     }
 
-    @media (max-width: 768px) {
+    @include respond-below(md) {
       max-width: 95%;
-      padding: 0 1rem;
+      @include padding-x(md);
     }
 
-    @media (max-width: 480px) {
+    @include respond-below(sm) {
       max-width: 100%;
-      padding: 0 0.75rem;
+      @include padding-x(sm);
     }
   }
 
   &__header {
     text-align: center;
-    margin-bottom: 3rem;
+    @include margin-bottom(3xl);
 
-    @media (max-width: 768px) {
-      margin-bottom: 2rem;
+    @include respond-below(md) {
+      @include margin-bottom(xl);
     }
 
-    @media (max-width: 480px) {
-      margin-bottom: 1.5rem;
+    @include respond-below(sm) {
+      @include margin-bottom(lg);
     }
   }
 
   &__title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #2d3748;
-    margin-bottom: 1rem;
+    @include font-size(4xl);
+    @include font-weight(bold);
+    @include text-color(primary);
+    @include margin-bottom(md);
 
-    @media (max-width: 1024px) {
-      font-size: 2.25rem;
+    @include respond-below(lg) {
+      @include font-size(3xl);
     }
 
-    @media (max-width: 768px) {
-      font-size: 2rem;
+    @include respond-below(md) {
+      @include font-size(2xl);
     }
 
-    @media (max-width: 480px) {
-      font-size: 1.75rem;
-      margin-bottom: 0.75rem;
+    @include respond-below(sm) {
+      @include font-size(xl);
+      @include margin-bottom(sm);
     }
   }
 
   &__subtitle {
-    font-size: 1.125rem;
-    color: #4a5568;
-    margin-bottom: 2rem;
+    @include font-size(lg);
+    @include text-color(secondary);
+    @include margin-bottom(xl);
 
-    @media (max-width: 768px) {
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
+    @include respond-below(md) {
+      @include font-size(base);
+      @include margin-bottom(lg);
     }
 
-    @media (max-width: 480px) {
-      font-size: 0.875rem;
-      margin-bottom: 1rem;
+    @include respond-below(sm) {
+      @include font-size(sm);
+      @include margin-bottom(md);
     }
   }
 
   &__progress {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    @include flex-column;
+    @include flex-center;
+    gap: $spacing-md;
   }
 
   &__progress-bar {
     width: 100%;
     height: 8px;
-    background: rgba(212, 165, 116, 0.2);
-    border-radius: 4px;
+    background: rgba($primary-color, 0.2);
+    @include border-radius(sm);
     overflow: hidden;
   }
 
   &__progress-fill {
     height: 100%;
-    background: linear-gradient(135deg, #d4a574, #b8860b);
-    transition: width 0.3s ease;
+    background: $bg-gradient-primary;
+    @include transition(width, normal);
   }
 
   &__progress-text {
-    font-size: 0.875rem;
-    color: #4a5568;
-    font-weight: 500;
-  }
-
-  &__content {
-    background: white;
-    border-radius: 1rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    padding: 2rem;
-    margin-bottom: 2rem;
-
-    @media (max-width: 1024px) {
-      padding: 1.75rem;
-    }
-
-    @media (max-width: 768px) {
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    @media (max-width: 480px) {
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 0.75rem;
-    }
+    @include font-size(sm);
+    @include text-color(secondary);
+    @include font-weight(medium);
   }
 
   &__step {
-    max-width: 600px;
-    margin: 0 auto;
+    @include margin-top(3xl);
+    @include bg-color(primary);
+    @include border-radius(xl);
+    @include shadow(md);
+    @include padding(xl);
+
+    @include respond-below(md) {
+      @include padding(lg);
+      @include margin-top(xl);
+    }
   }
 
   &__step-title {
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: #2d3748;
-    margin-bottom: 0.5rem;
+    @include heading-2;
+    @include text-color(primary);
+    @include margin-bottom(md);
+    text-align: center;
 
-    @media (max-width: 1024px) {
-      font-size: 1.625rem;
-    }
-
-    @media (max-width: 768px) {
-      font-size: 1.5rem;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 1.25rem;
-      margin-bottom: 0.25rem;
+    @include respond-below(md) {
+      @include heading-3;
     }
   }
 
   &__step-subtitle {
-    color: #4a5568;
-    margin-bottom: 2rem;
+    @include body-large;
+    @include text-color(secondary);
+    @include margin-bottom(xl);
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 
-    @media (max-width: 768px) {
-      font-size: 0.875rem;
-      margin-bottom: 1.5rem;
+    @include respond-below(md) {
+      @include body-medium;
+      @include margin-bottom(lg);
     }
-
-    @media (max-width: 480px) {
-      font-size: 0.8rem;
-      margin-bottom: 1rem;
-    }
-  }
-
-  &__form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  &__form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  &__label {
-    font-weight: 600;
-    color: #2d3748;
-    font-size: 1rem;
-
-    @media (max-width: 768px) {
-      font-size: 0.875rem;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 0.8rem;
-    }
-  }
-
-  &__input,
-  &__select {
-    padding: 0.75rem 1rem;
-    border: 1px solid rgba(212, 165, 116, 0.3);
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-
-    @media (max-width: 768px) {
-      padding: 0.625rem 0.875rem;
-      font-size: 0.875rem;
-    }
-
-    @media (max-width: 480px) {
-      padding: 0.5rem 0.75rem;
-      font-size: 0.8rem;
-      border-radius: 0.375rem;
-    }
-
-    &:focus {
-      outline: none;
-      border-color: #d4a574;
-    }
-  }
-
-  &__help-text {
-    font-size: 0.875rem;
-    color: #718096;
-    margin-top: 0.25rem;
-  }
-
-  &__location-note {
-    margin-bottom: 2rem;
-  }
-
-  &__note {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem;
-    background: rgba(212, 165, 116, 0.1);
-    border: 1px solid rgba(212, 165, 116, 0.2);
-    border-radius: 0.75rem;
-
-    @media (max-width: 768px) {
-      gap: 0.75rem;
-      padding: 0.875rem;
-    }
-
-    @media (max-width: 480px) {
-      gap: 0.5rem;
-      padding: 0.75rem;
-      border-radius: 0.5rem;
-    }
-  }
-
-  &__note-icon {
-    font-size: 1.5rem;
-    flex-shrink: 0;
-
-    @media (max-width: 768px) {
-      font-size: 1.25rem;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 1rem;
-    }
-  }
-
-  &__note-content {
-    flex: 1;
-
-    strong {
-      display: block;
-      font-weight: 600;
-      color: #2d3748;
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      margin: 0;
-      color: #4a5568;
-      font-size: 0.875rem;
-      line-height: 1.4;
-    }
-  }
-
-  &__activities {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
   }
 
   &__activities-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: $spacing-lg;
+    @include margin-bottom(xl);
 
-    @media (max-width: 1024px) {
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 0.875rem;
-    }
-
-    @media (max-width: 768px) {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 0.75rem;
-    }
-
-    @media (max-width: 480px) {
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 0.5rem;
-    }
-  }
-
-  &__activity-card {
-    border: 1px solid rgba(212, 165, 116, 0.15);
-    border-radius: 0.75rem;
-    padding: 1.5rem;
-    background: white;
-    transition: all 0.3s ease;
-
-    &:hover {
-      box-shadow: 0 4px 12px rgba(212, 165, 116, 0.1);
+    @include respond-below(md) {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: $spacing-md;
+      @include margin-bottom(lg);
     }
   }
 
   &__activity-item {
-    border: 1px solid rgba(212, 165, 116, 0.15);
-    border-radius: 0.75rem;
-    background: white;
-    transition: all 0.3s ease;
-
-    &:hover {
-      box-shadow: 0 4px 12px rgba(212, 165, 116, 0.1);
-    }
-  }
-
-  &__activity-checkbox {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem;
+    @include bg-color(primary);
+    @include border($border-light, 2px);
+    @include border-radius(lg);
+    @include padding(lg);
+    @include transition(all, normal);
     cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 0.75rem;
-
-    @media (max-width: 768px) {
-      gap: 0.5rem;
-      padding: 0.875rem;
-    }
-
-    @media (max-width: 480px) {
-      gap: 0.375rem;
-      padding: 0.75rem;
-      border-radius: 0.5rem;
-    }
+    text-align: center;
 
     &:hover {
-      background: rgba(212, 165, 116, 0.05);
+      @include border($primary-color, 2px);
+      transform: translateY(-2px);
+      @include shadow(md);
     }
 
     &--selected {
-      background: rgba(212, 165, 116, 0.1);
-      border-color: #d4a574;
+      @include border($primary-color, 2px);
+      background: rgba($primary-color, 0.05);
     }
-
-    input[type="checkbox"] {
-      width: 18px;
-      height: 18px;
-      accent-color: #d4a574;
-
-      @media (max-width: 480px) {
-        width: 16px;
-        height: 16px;
-      }
-    }
-  }
-
-  &__activity-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
   }
 
   &__activity-icon {
-    font-size: 2rem;
-
-    @media (max-width: 768px) {
-      font-size: 1.75rem;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 1.5rem;
-    }
+    @include font-size(3xl);
+    @include margin-bottom(sm);
   }
 
   &__activity-name {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #2d3748;
-    margin: 0;
-
-    @media (max-width: 768px) {
-      font-size: 0.875rem;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 0.8rem;
-    }
+    @include font-weight(medium);
+    @include text-color(primary);
+    @include font-size(sm);
   }
 
-  &__activity-options {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  &__radio-group {
+    @include margin-bottom(xl);
   }
 
-  &__topics {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 0.75rem;
-  }
-
-  &__checkboxes {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 0.75rem;
-
-    @media (max-width: 768px) {
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 0.5rem;
-    }
-
-    @media (max-width: 480px) {
-      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-      gap: 0.375rem;
-    }
-  }
-
-  &__checkbox {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  &__radio-option {
+    @include flex-start;
+    gap: $spacing-md;
+    @include padding(md);
+    @include border($border-light, 2px);
+    @include border-radius(lg);
+    @include transition(all, normal);
     cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    transition: background 0.3s ease;
+    @include margin-bottom(sm);
 
     &:hover {
-      background: rgba(212, 165, 116, 0.1);
+      @include border($primary-color, 2px);
+      background: rgba($primary-color, 0.05);
     }
 
-    input[type="checkbox"] {
-      width: 16px;
-      height: 16px;
-      accent-color: #d4a574;
-    }
-
-    span {
-      font-size: 0.875rem;
-      color: #2d3748;
+    &--selected {
+      @include border($primary-color, 2px);
+      background: rgba($primary-color, 0.05);
     }
   }
 
-  &__top-activities {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+  &__radio-input {
+    @include font-size(lg);
+    accent-color: $primary-color;
   }
 
-  &__selected-count {
-    text-align: center;
-    font-weight: 600;
-    color: #2d3748;
-    font-size: 1.125rem;
-    padding: 1rem;
-    background: rgba(212, 165, 116, 0.1);
-    border-radius: 0.5rem;
+  &__radio-label {
+    @include font-weight(medium);
+    @include text-color(primary);
+    @include font-size(base);
   }
 
-  &__no-activities {
-    text-align: center;
-    color: #4a5568;
-    font-style: italic;
-    padding: 2rem;
+  &__input-group {
+    @include margin-bottom(lg);
   }
 
-  &__navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-
-    @media (max-width: 768px) {
-      gap: 0.75rem;
-    }
-
-    @media (max-width: 480px) {
-      gap: 0.5rem;
-    }
-
-    // Ensure Next button is always on the right, even when Back button is hidden
-    .survey__btn--primary {
-      margin-left: auto;
-    }
-
-    // When Back button is present, reset the margin
-    .survey__btn--secondary + .survey__btn--primary {
-      margin-left: 0;
-    }
+  &__input-label {
+    @include font-weight(medium);
+    @include text-color(primary);
+    @include margin-bottom(sm);
+    @include font-size(sm);
   }
 
-  &__btn {
-    padding: 0.75rem 2rem;
-    border: none;
-    border-radius: 0.5rem;
-    font-weight: 600;
+  &__input-field {
+    @include input-base;
+    @include margin-bottom(sm);
+  }
+
+  &__select-field {
+    @include input-base;
     cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 1rem;
+  }
 
-    @media (max-width: 1024px) {
-      padding: 0.75rem 1.75rem;
+  &__textarea-field {
+    @include input-base;
+    min-height: 100px;
+    resize: vertical;
+  }
+
+  &__checkbox-group {
+    @include margin-bottom(lg);
+  }
+
+  &__checkbox-item {
+    @include flex-start;
+    gap: $spacing-sm;
+    @include padding(sm);
+    @include margin-bottom(sm);
+    @include border($border-light, 1px);
+    @include border-radius(md);
+    @include transition(all, normal);
+    cursor: pointer;
+
+    &:hover {
+      @include border($primary-color, 1px);
+      background: rgba($primary-color, 0.05);
     }
 
-    @media (max-width: 768px) {
-      padding: 0.625rem 1.5rem;
-      font-size: 0.875rem;
-    }
-
-    @media (max-width: 480px) {
-      padding: 0.5rem 1.25rem;
-      font-size: 0.8rem;
-      border-radius: 0.375rem;
-    }
-
-    &--primary {
-      background: linear-gradient(135deg, #d4a574, #b8860b);
-      color: white;
-
-      &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
-      }
-
-      @media (max-width: 480px) {
-        &:hover {
-          transform: none;
-          box-shadow: none;
-        }
-      }
-    }
-
-    &--secondary {
-      background: transparent;
-      color: #4a5568;
-      border: 1px solid rgba(212, 165, 116, 0.3);
-
-      &:hover {
-        background: rgba(212, 165, 116, 0.1);
-      }
+    &--selected {
+      @include border($primary-color, 1px);
+      background: rgba($primary-color, 0.05);
     }
   }
 
-  // Availability Step Styles
+  &__checkbox-input {
+    @include font-size(lg);
+    accent-color: $primary-color;
+  }
+
+  &__checkbox-label {
+    @include font-weight(medium);
+    @include text-color(primary);
+    @include font-size(sm);
+  }
+
   &__availability-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    @include margin-bottom(xl);
   }
 
   &__day-selector {
-    display: flex;
-    gap: 0.5rem;
+    @include flex-center;
+    gap: $spacing-sm;
+    @include margin-bottom(lg);
     flex-wrap: wrap;
-    justify-content: center;
 
-    @media (max-width: 768px) {
-      gap: 0.25rem;
+    @include respond-below(md) {
+      gap: $spacing-xs;
     }
   }
 
   &__day-button {
-    padding: 0.75rem 1.5rem;
-    border: 1px solid rgba(212, 165, 116, 0.3);
-    background: white;
-    border-radius: 0.5rem;
+    @include padding(sm);
+    @include border-radius(md);
+    @include font-weight(medium);
+    @include font-size(sm);
+    @include border($border-light, 1px);
+    @include transition(all, normal);
     cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    color: #4a5568;
+    background: transparent;
+    @include text-color(secondary);
 
     &:hover {
-      background: rgba(212, 165, 116, 0.1);
-      border-color: #d4a574;
+      @include border($primary-color, 1px);
+      @include text-color(primary);
     }
 
     &--active {
-      background: linear-gradient(135deg, #d4a574, #b8860b);
-      color: white;
-      border-color: #b8860b;
-    }
-
-    @media (max-width: 768px) {
-      padding: 0.5rem 1rem;
-      font-size: 0.875rem;
-    }
-
-    @media (max-width: 480px) {
-      padding: 0.375rem 0.75rem;
-      font-size: 0.8rem;
+      @include bg-color(primary);
+      @include border($primary-color, 1px);
+      @include text-color(accent);
     }
   }
 
   &__time-slots {
-    background: white;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(212, 165, 116, 0.15);
-
-    @media (max-width: 768px) {
-      padding: 1.5rem;
-    }
+    @include margin-bottom(lg);
   }
 
   &__time-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #2d3748;
-    margin-bottom: 1.5rem;
-    text-align: center;
-
-    @media (max-width: 768px) {
-      font-size: 1.125rem;
-      margin-bottom: 1rem;
-    }
+    @include font-weight(medium);
+    @include text-color(primary);
+    @include margin-bottom(md);
+    @include font-size(sm);
   }
 
   &__time-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
-    }
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: $spacing-sm;
   }
 
   &__time-checkbox {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem;
-    border: 1px solid rgba(212, 165, 116, 0.2);
-    border-radius: 0.5rem;
+    @include flex-start;
+    gap: $spacing-sm;
+    @include padding(sm);
+    @include border($border-light, 1px);
+    @include border-radius(md);
+    @include transition(all, normal);
     cursor: pointer;
-    transition: all 0.3s ease;
-    background: white;
 
     &:hover {
-      background: rgba(212, 165, 116, 0.05);
-      border-color: #d4a574;
+      @include border($primary-color, 1px);
+      background: rgba($primary-color, 0.05);
     }
 
     &--selected {
-      background: linear-gradient(
-        135deg,
-        rgba(212, 165, 116, 0.1),
-        rgba(184, 134, 11, 0.1)
-      );
-      border-color: #d4a574;
-      box-shadow: 0 2px 8px rgba(212, 165, 116, 0.2);
-    }
-
-    input[type="checkbox"] {
-      width: 1.25rem;
-      height: 1.25rem;
-      accent-color: #d4a574;
-    }
-
-    @media (max-width: 768px) {
-      padding: 0.75rem;
-      gap: 0.5rem;
+      @include border($primary-color, 1px);
+      background: rgba($primary-color, 0.05);
     }
   }
 
   &__time-label {
-    font-weight: 500;
-    color: #2d3748;
-    flex: 1;
-
-    @media (max-width: 768px) {
-      font-size: 0.875rem;
-    }
+    @include font-weight(medium);
+    @include text-color(primary);
+    @include font-size(sm);
   }
 
   &__availability-summary {
-    background: white;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(212, 165, 116, 0.15);
-
-    @media (max-width: 768px) {
-      padding: 1.5rem;
-    }
+    @include margin-top(lg);
+    @include padding(lg);
+    @include bg-color(secondary);
+    @include border-radius(lg);
   }
 
   &__summary-title {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: #2d3748;
-    margin-bottom: 1.5rem;
-    text-align: center;
-
-    @media (max-width: 768px) {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-    }
+    @include font-weight(medium);
+    @include text-color(primary);
+    @include margin-bottom(md);
+    @include font-size(sm);
   }
 
   &__summary-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-
-    @media (max-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.75rem;
-    }
-
-    @media (max-width: 480px) {
-      grid-template-columns: 1fr;
-    }
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: $spacing-sm;
   }
 
   &__summary-day {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.75rem 1rem;
-    background: rgba(212, 165, 116, 0.05);
-    border-radius: 0.5rem;
-    border: 1px solid rgba(212, 165, 116, 0.1);
-
-    @media (max-width: 768px) {
-      padding: 0.5rem 0.75rem;
-    }
+    @include padding(sm);
+    @include border-radius(md);
+    @include bg-color(primary);
+    text-align: center;
   }
 
   &__summary-day-name {
-    font-weight: 600;
-    color: #2d3748;
-    font-size: 0.875rem;
-
-    @media (max-width: 768px) {
-      font-size: 0.8rem;
-    }
+    @include font-weight(medium);
+    @include text-color(primary);
+    @include font-size(xs);
+    @include margin-bottom(xs);
   }
 
   &__summary-slots {
-    font-size: 0.75rem;
-    color: #4a5568;
-    font-weight: 500;
-
-    @media (max-width: 768px) {
-      font-size: 0.7rem;
-    }
+    @include font-size(xs);
+    @include text-color(secondary);
   }
 
-  // Event Preferences Step Styles
   &__preferences-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+    @include margin-bottom(xl);
   }
 
   &__preference-section {
-    background: white;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(212, 165, 116, 0.15);
-
-    @media (max-width: 768px) {
-      padding: 1.5rem;
-    }
+    @include margin-bottom(xl);
   }
 
   &__section-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #2d3748;
-    margin-bottom: 0.5rem;
-
-    @media (max-width: 768px) {
-      font-size: 1.125rem;
-    }
+    @include heading-4;
+    @include text-color(primary);
+    @include margin-bottom(sm);
   }
 
   &__section-subtitle {
-    color: #4a5568;
-    margin-bottom: 1.5rem;
-    font-size: 0.875rem;
+    @include body-medium;
+    @include text-color(secondary);
+    @include margin-bottom(lg);
+  }
 
-    @media (max-width: 768px) {
-      font-size: 0.8rem;
+  &__navigation {
+    @include flex-between;
+    @include margin-top(xl);
+    gap: $spacing-md;
+
+    @include respond-below(md) {
+      @include flex-column;
+      gap: $spacing-sm;
     }
   }
 
-  &__radio-group {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
+  &__btn {
+    @include button-base;
+    @include padding(md);
+    @include font-size(base);
 
-  &__radio-option {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 1rem;
-    border: 1px solid rgba(212, 165, 116, 0.2);
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background: white;
-
-    &:hover {
-      background: rgba(212, 165, 116, 0.05);
-      border-color: #d4a574;
+    &--primary {
+      @include button-primary;
     }
 
-    input[type="radio"]:checked + .survey__radio-label {
-      color: #2d3748;
-      font-weight: 600;
+    &--secondary {
+      @include button-secondary;
     }
 
-    input[type="radio"]:checked ~ & {
-      background: linear-gradient(
-        135deg,
-        rgba(212, 165, 116, 0.1),
-        rgba(184, 134, 11, 0.1)
-      );
-      border-color: #d4a574;
-      box-shadow: 0 2px 8px rgba(212, 165, 116, 0.2);
+    &--ghost {
+      @include button-ghost;
     }
 
-    input[type="radio"] {
-      width: 1.25rem;
-      height: 1.25rem;
-      accent-color: #d4a574;
-      margin-top: 0.125rem;
-    }
-
-    @media (max-width: 768px) {
-      padding: 0.75rem;
-      gap: 0.5rem;
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
   }
 
-  &__radio-label {
-    flex: 1;
-    color: #4a5568;
-    line-height: 1.5;
-    transition: all 0.3s ease;
+  &__completion {
+    text-align: center;
+    @include padding-y(4xl);
+  }
 
-    @media (max-width: 768px) {
-      font-size: 0.875rem;
+  &__completion-title {
+    @include heading-2;
+    @include text-color(primary);
+    @include margin-bottom(md);
+  }
+
+  &__completion-subtitle {
+    @include body-large;
+    @include text-color(secondary);
+    @include margin-bottom(xl);
+  }
+
+  &__completion-actions {
+    @include flex-center;
+    gap: $spacing-md;
+
+    @include respond-below(md) {
+      @include flex-column;
+      gap: $spacing-sm;
     }
   }
 }
