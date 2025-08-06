@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
-// Styles imported globally in _app.tsx
+// Styles imported globally in layout.tsx
 import VerificationStatus from "../Verification/VerificationStatus";
 import SelfieVerification from "../Verification/SelfieVerification";
 

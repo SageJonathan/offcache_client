@@ -1,15 +1,14 @@
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
-// Styles imported globally in _app.tsx
+import { usePathname } from "next/navigation";
+// Styles imported globally in layout.tsx
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const router = useRouter();
+  const pathname = usePathname();
 
   // Dev logic: mimic logged in state when on dashboard or events routes
-  const isLoggedIn =
-    router.pathname === "/dashboard" || router.pathname === "/events";
+  const isLoggedIn = pathname === "/dashboard" || pathname === "/events";
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useRouter } from "next/router";
-// Styles imported globally in _app.tsx
+import { useRouter } from "next/navigation";
+// Styles imported globally in layout.tsx
 
 interface Event {
   id: number;
