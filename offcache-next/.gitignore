@@ -108,4 +108,7 @@ node_modules/
 .dynamodb/
 
 # TernJS port file
-.tern-port 
+.tern-port
+
+# Cursor IDE
+.cursor/ 
