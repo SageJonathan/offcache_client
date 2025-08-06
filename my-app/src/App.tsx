@@ -15,6 +15,7 @@ import Admin from "./pages/Admin";
 import Contact from "./pages/Contact";
 import Career from "./pages/Career";
 import Blog from "./pages/Blog";
+import Events from "./pages/Events";
 import HelpCenter from "./components/HelpCenter/HelpCenter";
 import Privacy from "./components/Policies/Privacy";
 import Terms from "./components/Policies/Terms";
@@ -36,6 +37,7 @@ function App() {
         <Route path="/user-analytics" element={<UserAnalytics />} />
         <Route path="/profile/:userId" element={<VisitProfile />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/events" element={<Events />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/career" element={<Career />} />
         <Route path="/blog" element={<Blog />} />
