@@ -1,0 +1,133 @@
+.dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fefefe 0%, #f8f6f3 100%);
+  margin-top: 3rem;
+
+  &__container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 100vh;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
+  }
+
+  &__sidebar {
+    width: 280px;
+    background: white;
+    border-right: 1px solid rgba(212, 165, 116, 0.15);
+    padding: 2rem 0;
+
+    @media (max-width: 1024px) {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid rgba(212, 165, 116, 0.15);
+      padding: 1rem 0;
+    }
+  }
+
+  &__sidebar-header {
+    padding: 0 2rem 2rem;
+    border-bottom: 1px solid rgba(212, 165, 116, 0.15);
+    margin-bottom: 2rem;
+
+    @media (max-width: 1024px) {
+      padding: 0 1rem 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__sidebar-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+  }
+
+  &__sidebar-subtitle {
+    color: #4a5568;
+    font-size: 0.875rem;
+  }
+
+  &__nav {
+    padding: 0 1rem;
+  }
+
+  &__nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: none;
+    background: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+
+    &:hover {
+      background: rgba(212, 165, 116, 0.1);
+    }
+
+    &--active {
+      background: linear-gradient(135deg, #d4a574, #b8860b);
+      color: white;
+    }
+  }
+
+  &__nav-icon {
+    font-size: 1.25rem;
+  }
+
+  &__nav-text {
+    font-weight: 500;
+  }
+
+  &__content {
+    flex: 1;
+    padding: 2rem;
+
+    @media (max-width: 1024px) {
+      padding: 1rem;
+    }
+  }
+
+  &__section {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+  }
+
+  &__section-header {
+    padding: 2rem 2rem 1rem;
+    border-bottom: 1px solid rgba(212, 165, 116, 0.15);
+
+    @media (max-width: 768px) {
+      padding: 1.5rem 1.5rem 1rem;
+    }
+  }
+
+  &__section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+  }
+
+  &__section-subtitle {
+    color: #4a5568;
+    font-size: 1rem;
+  }
+
+  &__section-content {
+    padding: 2rem;
+
+    @media (max-width: 768px) {
+      padding: 1.5rem;
+    }
+  }
+}

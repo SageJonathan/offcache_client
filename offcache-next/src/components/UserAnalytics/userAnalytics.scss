@@ -1,0 +1,442 @@
+.user-analytics {
+  padding: 6rem 0 2rem 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  &__container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #d4a574, #b8860b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.025em;
+  }
+
+  &__subtitle {
+    font-size: 1.125rem;
+    color: #4a5568;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  &__progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(212, 165, 116, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  &__progress-fill {
+    height: 100%;
+    background: linear-gradient(135deg, #d4a574, #b8860b);
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 4px;
+  }
+
+  &__progress-text {
+    font-size: 0.875rem;
+    color: #4a5568;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+  }
+
+  &__content {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+    border: 1px solid rgba(212, 165, 116, 0.1);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(135deg, #d4a574, #b8860b);
+    }
+  }
+
+  &__step {
+    &-title {
+      font-size: 1.875rem;
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.025em;
+    }
+
+    &-subtitle {
+      font-size: 1.125rem;
+      color: #4a5568;
+      margin-bottom: 2.5rem;
+      line-height: 1.5;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__label {
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  &__select,
+  &__input {
+    padding: 1rem 1.25rem;
+    border: 2px solid rgba(212, 165, 116, 0.2);
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+    color: #2d3748;
+    font-family: inherit;
+
+    &:focus {
+      outline: none;
+      border-color: #d4a574;
+      box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+      transform: translateY(-1px);
+    }
+
+    &:hover {
+      border-color: rgba(212, 165, 116, 0.4);
+    }
+  }
+
+  &__select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+    appearance: none;
+  }
+
+  &__multiselect {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    border: 2px solid rgba(212, 165, 116, 0.2);
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      border-color: #d4a574;
+      background: rgba(212, 165, 116, 0.02);
+      transform: translateY(-1px);
+    }
+
+    &:has(input:checked) {
+      border-color: #d4a574;
+      background: rgba(212, 165, 116, 0.05);
+      box-shadow: 0 2px 8px rgba(212, 165, 116, 0.15);
+    }
+
+    input[type="checkbox"] {
+      width: 1.25rem;
+      height: 1.25rem;
+      accent-color: #d4a574;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    span {
+      font-size: 0.875rem;
+      color: #2d3748;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    @media (max-width: 768px) {
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 480px) {
+      gap: 0.5rem;
+    }
+
+    // Ensure Next button is always on the right, even when Back button is hidden
+    .user-analytics__btn--primary {
+      margin-left: auto;
+    }
+
+    // When Back button is present, reset the margin
+    .user-analytics__btn--secondary + .user-analytics__btn--primary {
+      margin-left: 0;
+    }
+  }
+
+  &__btn {
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+
+    @media (max-width: 1024px) {
+      padding: 0.75rem 1.75rem;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0.625rem 1.5rem;
+      font-size: 0.875rem;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0.5rem 1.25rem;
+      font-size: 0.8rem;
+      border-radius: 0.375rem;
+    }
+
+    &--primary {
+      background: linear-gradient(135deg, #d4a574, #b8860b);
+      color: white;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
+      }
+
+      @media (max-width: 480px) {
+        &:hover {
+          transform: none;
+          box-shadow: none;
+        }
+      }
+    }
+
+    &--secondary {
+      background: transparent;
+      color: #4a5568;
+      border: 1px solid rgba(212, 165, 116, 0.3);
+
+      &:hover {
+        background: rgba(212, 165, 116, 0.1);
+      }
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 1024px) {
+    &__container {
+      max-width: 700px;
+      padding: 0 1.5rem;
+    }
+
+    &__title {
+      font-size: 2.25rem;
+    }
+
+    &__content {
+      padding: 2rem;
+    }
+
+    &__step-title {
+      font-size: 1.75rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 5rem 0 2rem 0;
+
+    &__container {
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__subtitle {
+      font-size: 1rem;
+    }
+
+    &__content {
+      padding: 1.75rem;
+      border-radius: 1rem;
+    }
+
+    &__step-title {
+      font-size: 1.5rem;
+    }
+
+    &__step-subtitle {
+      font-size: 1rem;
+    }
+
+    &__form {
+      gap: 1.5rem;
+    }
+
+    &__multiselect {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    &__navigation {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    &__btn {
+      width: 100%;
+      padding: 1rem 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 4rem 0 2rem 0;
+
+    &__container {
+      padding: 0 0.75rem;
+    }
+
+    &__title {
+      font-size: 1.75rem;
+    }
+
+    &__subtitle {
+      font-size: 0.875rem;
+    }
+
+    &__content {
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+    }
+
+    &__step-title {
+      font-size: 1.375rem;
+    }
+
+    &__step-subtitle {
+      font-size: 0.875rem;
+    }
+
+    &__form {
+      gap: 1.25rem;
+    }
+
+    &__label {
+      font-size: 0.875rem;
+    }
+
+    &__select,
+    &__input {
+      padding: 0.875rem 1rem;
+      font-size: 0.875rem;
+      border-radius: 0.5rem;
+    }
+
+    &__checkbox {
+      padding: 0.875rem 1rem;
+      border-radius: 0.5rem;
+
+      span {
+        font-size: 0.8rem;
+      }
+    }
+
+    &__btn {
+      padding: 0.875rem 1.5rem;
+      font-size: 0.875rem;
+      border-radius: 0.5rem;
+    }
+  }
+
+  // Loading animation for progress bar
+  &__progress-fill {
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  // Focus styles for accessibility
+  &__select:focus-visible,
+  &__input:focus-visible,
+  &__checkbox:focus-visible {
+    outline: 2px solid #d4a574;
+    outline-offset: 2px;
+  }
+
+  // Smooth transitions for all interactive elements
+  * {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
