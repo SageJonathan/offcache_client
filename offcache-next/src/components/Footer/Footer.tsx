@@ -1,8 +1,5 @@
 import Link from "next/link";
-import Email from "../../assets/icons/email.png";
-import Facebook from "../../assets/icons/facebook.png";
-import Instagram from "../../assets/icons/instagram.png";
-import Tiktok from "../../assets/icons/tiktok.png";
+import Image from "next/image";
 // Styles imported globally in _app.tsx
 
 const Footer = () => {
@@ -19,7 +16,13 @@ const Footer = () => {
             </p>
             <div className="footer__contact">
               <a href="mailto:support@offcache.com" className="footer__email">
-                <img src={Email} alt="Email" className="footer__email-icon" />
+                <Image
+                  src="/icons/email.png"
+                  alt="Email"
+                  width={20}
+                  height={20}
+                  className="footer__email-icon"
+                />
                 <span>support@offcache.com</span>
               </a>
             </div>
@@ -91,9 +94,11 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="footer__social-link"
             >
-              <img
-                src={Instagram}
+              <Image
+                src="/icons/instagram.png"
                 alt="Instagram"
+                width={24}
+                height={24}
                 className="footer__social-icon"
               />
             </a>
@@ -103,7 +108,13 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="footer__social-link"
             >
-              <img src={Tiktok} alt="TikTok" className="footer__social-icon" />
+              <Image
+                src="/icons/tiktok.png"
+                alt="TikTok"
+                width={24}
+                height={24}
+                className="footer__social-icon"
+              />
             </a>
             <a
               href="https://facebook.com/"
@@ -111,9 +122,11 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="footer__social-link"
             >
-              <img
-                src={Facebook}
+              <Image
+                src="/icons/facebook.png"
                 alt="Facebook"
+                width={24}
+                height={24}
                 className="footer__social-icon"
               />
             </a>

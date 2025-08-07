@@ -1,7 +1,5 @@
 import React from "react";
-import Email from "../../assets/icons/email.png";
-import Facebook from "../../assets/icons/facebook.png";
-import Instagram from "../../assets/icons/instagram.png";
+import Image from "next/image";
 // Styles imported globally in _app.tsx
 
 const Contact = () => {
@@ -47,17 +45,21 @@ const Contact = () => {
               <h2 className="contact__section-title">Connect With Us</h2>
               <div className="contact__social">
                 <a href="#" className="contact__social-link">
-                  <img
-                    src={Instagram}
+                  <Image
+                    src="/icons/instagram.png"
                     alt="Instagram"
+                    width={24}
+                    height={24}
                     className="contact__social-icon"
                   />
                   <span className="contact__social-text">Instagram</span>
                 </a>
                 <a href="#" className="contact__social-link">
-                  <img
-                    src={Facebook}
+                  <Image
+                    src="/icons/facebook.png"
                     alt="Facebook"
+                    width={24}
+                    height={24}
                     className="contact__social-icon"
                   />
                   <span className="contact__social-text">Facebook</span>
