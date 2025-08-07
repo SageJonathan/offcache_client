@@ -41,7 +41,7 @@ const Hero = () => {
           <p className="hero__subtitle">
             Tired of awkward coffee chats and LinkedIn spam? We're building a
             platform that matches you monthly with someone who shares your love
-            for hiking, meditation, or personal growth.
+            for hiking, meditation, or personal growth. --- Back up tag---
           </p>
 
           <div className="hero__cta">
