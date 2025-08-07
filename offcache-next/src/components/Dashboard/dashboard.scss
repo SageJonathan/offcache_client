@@ -1,185 +1,133 @@
 .dashboard {
   min-height: 100vh;
-  background: $bg-gradient;
-  @include margin-top(3xl);
+  background: linear-gradient(135deg, #fefefe 0%, #f8f6f3 100%);
+  margin-top: 3rem;
 
   &__container {
-    @include flex-start;
+    display: flex;
     max-width: 1400px;
     margin: 0 auto;
     min-height: 100vh;
 
     @include respond-below(lg) {
-      @include flex-column;
+      flex-direction: column;
     }
   }
 
   &__sidebar {
     width: 280px;
-    @include bg-color(primary);
-    @include border-right($border-accent, 1px);
-    @include padding-y(xl);
+    background: white;
+    border-right: 1px solid rgba(212, 165, 116, 0.15);
+    padding: 2rem 0;
 
     @include respond-below(lg) {
       width: 100%;
-      @include border-right(none);
-      @include border-bottom($border-accent, 1px);
-      @include padding-y(md);
+      border-right: none;
+      border-bottom: 1px solid rgba(212, 165, 116, 0.15);
+      padding: 1rem 0;
     }
   }
 
   &__sidebar-header {
-    @include padding-x(xl);
-    @include padding-bottom(xl);
-    @include border-bottom($border-accent, 1px);
-    @include margin-bottom(xl);
+    padding: 0 2rem 2rem;
+    border-bottom: 1px solid rgba(212, 165, 116, 0.15);
+    margin-bottom: 2rem;
 
     @include respond-below(lg) {
-      @include padding-x(md);
-      @include padding-bottom(md);
-      @include margin-bottom(md);
+      padding: 0 1rem 1rem;
+      margin-bottom: 1rem;
     }
   }
 
   &__sidebar-title {
-    @include heading-3;
-    @include text-color(primary);
-    @include margin-bottom(sm);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
   }
 
   &__sidebar-subtitle {
-    @include text-color(secondary);
-    @include font-size(sm);
+    color: #4a5568;
+    font-size: 0.875rem;
   }
 
   &__nav {
-    @include padding-x(md);
+    padding: 0 1rem;
   }
 
   &__nav-item {
-    @include flex-start;
-    gap: $spacing-md;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     width: 100%;
-    @include padding(md);
+    padding: 1rem 1.5rem;
     border: none;
     background: none;
-    @include border-radius(xl);
+    border-radius: 0.75rem;
     cursor: pointer;
-    @include transition(all, normal);
-    @include margin-bottom(sm);
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
 
     &:hover {
-      background: rgba($primary-color, 0.1);
+      background: rgba(212, 165, 116, 0.1);
     }
 
     &--active {
-      background: $bg-gradient-primary;
-      color: $white;
+      background: linear-gradient(135deg, #d4a574, #b8860b);
+      color: white;
     }
   }
 
   &__nav-icon {
-    @include font-size(xl);
+    font-size: 1.25rem;
   }
 
   &__nav-text {
-    @include font-weight(medium);
+    font-weight: 500;
   }
 
   &__content {
     flex: 1;
-    @include padding(xl);
+    padding: 2rem;
 
     @include respond-below(lg) {
-      @include padding(md);
+      padding: 1rem;
     }
   }
 
   &__section {
-    @include bg-color(primary);
-    @include border-radius(lg);
-    @include shadow(md);
-    @include padding(xl);
-    @include margin-bottom(xl);
-
-    @include respond-below(md) {
-      @include padding(lg);
-      @include margin-bottom(lg);
-    }
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
   }
 
   &__section-header {
-    @include flex-between;
-    @include margin-bottom(lg);
-    @include padding-bottom(md);
-    @include border-bottom($border-light);
+    padding: 2rem 2rem 1rem;
+    border-bottom: 1px solid rgba(212, 165, 116, 0.15);
 
     @include respond-below(md) {
-      @include flex-column;
-      gap: $spacing-sm;
-      align-items: flex-start;
+      padding: 1.5rem 1.5rem 1rem;
     }
   }
 
   &__section-title {
-    @include heading-3;
-    @include text-color(primary);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
   }
 
   &__section-subtitle {
-    @include body-medium;
-    @include text-color(secondary);
+    color: #4a5568;
+    font-size: 1rem;
   }
 
-  &__section-actions {
-    @include flex-center;
-    gap: $spacing-sm;
+  &__section-content {
+    padding: 2rem;
 
     @include respond-below(md) {
-      width: 100%;
-      @include justify-content(flex-start);
+      padding: 1.5rem;
     }
-  }
-
-  &__btn {
-    @include button-base;
-    @include padding(sm);
-    @include font-size(sm);
-
-    &--primary {
-      @include button-primary;
-    }
-
-    &--secondary {
-      @include button-secondary;
-    }
-
-    &--ghost {
-      @include button-ghost;
-    }
-  }
-
-  &__empty {
-    @include flex-center;
-    @include flex-column;
-    @include padding-y(3xl);
-    @include text-color(tertiary);
-    @include font-size(lg);
-    text-align: center;
-  }
-
-  &__loading {
-    @include flex-center;
-    @include padding-y(3xl);
-    @include text-color(secondary);
-    @include font-size(lg);
-  }
-
-  &__error {
-    @include padding(lg);
-    @include bg-color(error);
-    @include text-color(inverse);
-    @include border-radius(md);
-    @include margin-bottom(lg);
   }
 }

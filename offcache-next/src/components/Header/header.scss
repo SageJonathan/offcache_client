@@ -3,30 +3,32 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba($white, 0.95);
+  background: rgba(254, 254, 254, 0.95);
   backdrop-filter: blur(10px);
-  @include border-bottom($primary-color, 1px);
-  z-index: $z-index-fixed;
-  @include transition(all, normal);
+  border-bottom: 1px solid rgba(212, 165, 116, 0.15);
+  z-index: 1000;
+  transition: all 0.3s ease;
 
   &__container {
     max-width: 1200px;
     margin: 0 auto;
-    @include padding-x(xl);
-    @include flex-between;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     height: 4rem;
 
     @include respond-below(lg) {
-      @include padding-x(lg);
+      padding: 0 1.5rem;
     }
 
     @include respond-below(md) {
-      @include padding-x(md);
+      padding: 0 1rem;
       height: 3.5rem;
     }
 
     @include respond-below(sm) {
-      @include padding-x(sm);
+      padding: 0 0.75rem;
     }
   }
 
@@ -35,38 +37,40 @@
   }
 
   &__brand {
-    @include heading-3;
-    @include font-weight(extrabold);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #2d3748;
     margin: 0;
-    background: $bg-gradient-primary;
+    background: linear-gradient(135deg, #d4a574, #b8860b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 
     @include respond-below(md) {
-      @include font-size(2xl);
+      font-size: 1.25rem;
     }
 
     @include respond-below(sm) {
-      @include font-size(xl);
+      font-size: 1.125rem;
     }
   }
 
   &__nav {
-    @include flex-center;
+    display: flex;
+    align-items: center;
 
     @include respond-below(md) {
       position: absolute;
       top: 100%;
       left: 0;
       right: 0;
-      background: rgba($white, 0.98);
-      @include border-bottom($primary-color, 1px);
+      background: rgba(254, 254, 254, 0.98);
+      border-bottom: 1px solid rgba(212, 165, 116, 0.15);
       transform: translateY(-100%);
       opacity: 0;
       visibility: hidden;
-      @include transition(all, normal);
-      @include shadow(lg);
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
 
       &--open {
         transform: translateY(0);
@@ -77,63 +81,64 @@
   }
 
   &__nav-list {
-    @include flex-center;
+    display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: $spacing-xl;
+    gap: 2rem;
 
     @include respond-below(lg) {
-      gap: $spacing-lg;
+      gap: 1.5rem;
     }
 
     @include respond-below(md) {
-      @include flex-column;
+      flex-direction: column;
       gap: 0;
-      @include padding-y(md);
+      padding: 1rem 0;
     }
   }
 
   &__nav-item {
     @include respond-below(md) {
-      @include border-bottom($primary-color, 1px);
+      border-bottom: 1px solid rgba(212, 165, 116, 0.1);
     }
   }
 
   &__nav-link {
-    @include text-color(secondary);
+    color: #4a5568;
     text-decoration: none;
-    @include font-weight(medium);
-    @include font-size(sm);
-    @include transition(color, normal);
-    @include padding-y(sm);
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
 
     @include respond-below(lg) {
-      @include font-size(xs);
+      font-size: 0.8rem;
     }
 
     &:hover {
-      @include text-color(accent);
+      color: #d4a574;
     }
 
     @include respond-below(md) {
       display: block;
-      @include padding(md);
-      @include font-size(base);
+      padding: 1rem 2rem;
+      font-size: 1rem;
     }
 
     @include respond-below(sm) {
-      @include padding(sm);
-      @include font-size(sm);
+      padding: 0.875rem 1.5rem;
+      font-size: 0.9rem;
     }
   }
 
   &__actions {
-    @include flex-center;
-    gap: $spacing-md;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 
     @include respond-below(lg) {
-      gap: $spacing-sm;
+      gap: 0.75rem;
     }
 
     @include respond-below(md) {
@@ -142,46 +147,46 @@
   }
 
   &__btn {
-    @include padding(md);
-    @include border-radius(xl);
-    @include font-size(sm);
-    @include font-weight(semibold);
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
     cursor: pointer;
-    @include transition(all, normal);
+    transition: all 0.3s ease;
     border: none;
 
     @include respond-below(lg) {
-      @include padding(sm);
-      @include font-size(xs);
+      padding: 0.375rem 0.75rem;
+      font-size: 0.8rem;
     }
 
     &--secondary {
       background: transparent;
-      @include text-color(secondary);
-      @include border($primary-color, 1px);
+      color: #4a5568;
+      border: 1px solid rgba(212, 165, 116, 0.25);
 
       &:hover {
-        background: rgba($primary-color, 0.08);
-        @include text-color(accent);
-        border-color: $primary-color;
+        background: rgba(212, 165, 116, 0.08);
+        color: #8b5a2b;
+        border-color: #d4a574;
       }
     }
 
     &--primary {
-      background: $bg-gradient-primary;
-      color: $white;
-      @include shadow(md);
+      background: linear-gradient(135deg, #d4a574, #b8860b);
+      color: white;
+      box-shadow: 0 2px 8px rgba(212, 165, 116, 0.25);
 
       &:hover {
         transform: translateY(-1px);
-        @include shadow(lg);
+        box-shadow: 0 4px 12px rgba(212, 165, 116, 0.35);
       }
     }
   }
 
   &__mobile-toggle {
     display: none;
-    @include flex-column;
+    flex-direction: column;
     justify-content: space-around;
     width: 2rem;
     height: 2rem;
@@ -194,26 +199,39 @@
     @include respond-below(md) {
       display: flex;
     }
-  }
 
-  &__hamburger {
-    width: 100%;
-    height: 2px;
-    background: $text-primary;
-    @include transition(all, normal);
-    transform-origin: center;
+    @include respond-below(sm) {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+
+    span {
+      width: 2rem;
+      height: 0.25rem;
+      background: #2d3748;
+      border-radius: 0.125rem;
+      transition: all 0.3s ease;
+      transform-origin: 1px;
+
+      @include respond-below(sm) {
+        width: 1.75rem;
+        height: 0.2rem;
+      }
+    }
 
     &--open {
-      &:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-      }
+      span {
+        &:first-child {
+          transform: rotate(45deg);
+        }
 
-      &:nth-child(2) {
-        opacity: 0;
-      }
+        &:nth-child(2) {
+          opacity: 0;
+        }
 
-      &:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
       }
     }
   }
