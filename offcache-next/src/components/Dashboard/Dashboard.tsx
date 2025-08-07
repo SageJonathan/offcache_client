@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import ProfileSection from "./ProfileSection";
 import MessagesSection from "./MessagesSection";

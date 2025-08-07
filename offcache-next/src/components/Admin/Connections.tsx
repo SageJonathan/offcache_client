@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 // Styles imported globally in _app.tsx
 
