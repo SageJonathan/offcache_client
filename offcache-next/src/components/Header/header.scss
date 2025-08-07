@@ -18,16 +18,16 @@
     justify-content: space-between;
     height: 4rem;
 
-    @include respond-below(lg) {
+    @media (max-width: 1024px) {
       padding: 0 1.5rem;
     }
 
-    @include respond-below(md) {
+    @media (max-width: 768px) {
       padding: 0 1rem;
       height: 3.5rem;
     }
 
-    @include respond-below(sm) {
+    @media (max-width: 480px) {
       padding: 0 0.75rem;
     }
   }
@@ -46,11 +46,11 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
 
-    @include respond-below(md) {
+    @media (max-width: 768px) {
       font-size: 1.25rem;
     }
 
-    @include respond-below(sm) {
+    @media (max-width: 480px) {
       font-size: 1.125rem;
     }
   }
@@ -59,7 +59,7 @@
     display: flex;
     align-items: center;
 
-    @include respond-below(md) {
+    @media (max-width: 768px) {
       position: absolute;
       top: 100%;
       left: 0;
@@ -87,11 +87,11 @@
     padding: 0;
     gap: 2rem;
 
-    @include respond-below(lg) {
+    @media (max-width: 1024px) {
       gap: 1.5rem;
     }
 
-    @include respond-below(md) {
+    @media (max-width: 768px) {
       flex-direction: column;
       gap: 0;
       padding: 1rem 0;
@@ -99,7 +99,7 @@
   }
 
   &__nav-item {
-    @include respond-below(md) {
+    @media (max-width: 768px) {
       border-bottom: 1px solid rgba(212, 165, 116, 0.1);
     }
   }
@@ -112,7 +112,7 @@
     transition: color 0.3s ease;
     padding: 0.5rem 0;
 
-    @include respond-below(lg) {
+    @media (max-width: 1024px) {
       font-size: 0.8rem;
     }
 
@@ -120,13 +120,13 @@
       color: #d4a574;
     }
 
-    @include respond-below(md) {
+    @media (max-width: 768px) {
       display: block;
       padding: 1rem 2rem;
       font-size: 1rem;
     }
 
-    @include respond-below(sm) {
+    @media (max-width: 480px) {
       padding: 0.875rem 1.5rem;
       font-size: 0.9rem;
     }
@@ -137,11 +137,11 @@
     align-items: center;
     gap: 1rem;
 
-    @include respond-below(lg) {
+    @media (max-width: 1024px) {
       gap: 0.75rem;
     }
 
-    @include respond-below(md) {
+    @media (max-width: 768px) {
       display: none;
     }
   }
@@ -155,7 +155,7 @@
     transition: all 0.3s ease;
     border: none;
 
-    @include respond-below(lg) {
+    @media (max-width: 1024px) {
       padding: 0.375rem 0.75rem;
       font-size: 0.8rem;
     }
@@ -196,11 +196,11 @@
     padding: 0;
     z-index: 10;
 
-    @include respond-below(md) {
+    @media (max-width: 768px) {
       display: flex;
     }
 
-    @include respond-below(sm) {
+    @media (max-width: 480px) {
       width: 1.75rem;
       height: 1.75rem;
     }
@@ -213,7 +213,7 @@
       transition: all 0.3s ease;
       transform-origin: 1px;
 
-      @include respond-below(sm) {
+      @media (max-width: 480px) {
         width: 1.75rem;
         height: 0.2rem;
       }

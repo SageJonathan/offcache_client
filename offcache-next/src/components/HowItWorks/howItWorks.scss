@@ -1,5 +1,320 @@
 .how-it-works {
   padding: 6rem 0;
+  background: $bg-white;
+
+  @media (max-width: 768px) {
+    padding: 4rem 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 3rem 0;
+  }
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    @media (max-width: 768px) {
+      padding: 0 1rem;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0 0.75rem;
+    }
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    @media (max-width: 768px) {
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 480px) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: $text-primary;
+    margin-bottom: 1rem;
+
+    @media (max-width: 1024px) {
+      font-size: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.75rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.25rem;
+    color: $text-secondary;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+
+    @media (max-width: 1024px) {
+      font-size: 1.125rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+      max-width: 100%;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-bottom: 4rem;
+
+    @media (max-width: 1024px) {
+      gap: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 480px) {
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__step {
+    text-align: center;
+    position: relative;
+
+    @media (max-width: 768px) {
+      &:not(:last-child)::after {
+        display: none;
+      }
+    }
+
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 2rem;
+      right: -1.5rem;
+      width: 3rem;
+      height: 2px;
+      background: $gradient-primary;
+      transform: translateY(-50%);
+
+      @media (max-width: 1024px) {
+        right: -1rem;
+        width: 2rem;
+      }
+    }
+  }
+
+  &__step-number {
+    width: 4rem;
+    height: 4rem;
+    background: $gradient-primary;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    @media (max-width: 768px) {
+      width: 3.5rem;
+      height: 3.5rem;
+      font-size: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    @media (max-width: 480px) {
+      width: 3rem;
+      height: 3rem;
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__step-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $text-primary;
+    margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.25rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.125rem;
+    }
+  }
+
+  &__step-description {
+    color: $text-secondary;
+    line-height: 1.6;
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.875rem;
+    }
+  }
+
+  &__features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__feature {
+    background: $bg-white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba($primary-color, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    @media (max-width: 768px) {
+      padding: 1.5rem;
+    }
+  }
+
+  &__feature-icon {
+    width: 3rem;
+    height: 3rem;
+    background: rgba($primary-color, 0.1);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: $primary-color;
+    font-size: 1.25rem;
+
+    @media (max-width: 768px) {
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 1rem;
+    }
+  }
+
+  &__feature-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $text-primary;
+    margin-bottom: 0.75rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.125rem;
+    }
+  }
+
+  &__feature-description {
+    color: $text-secondary;
+    line-height: 1.5;
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__cta {
+    text-align: center;
+    background: $bg-white;
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba($primary-color, 0.1);
+
+    @media (max-width: 768px) {
+      padding: 2rem;
+    }
+  }
+
+  &__cta-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $text-primary;
+    margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__cta-text {
+    color: $text-secondary;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__cta-button {
+    background: $gradient-primary;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba($primary-color, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      padding: 0.875rem 1.75rem;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+
+.how-it-works {
+  padding: 6rem 0;
   background: white;
 
   @media (max-width: 768px) {

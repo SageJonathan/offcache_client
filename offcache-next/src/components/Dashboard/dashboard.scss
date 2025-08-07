@@ -9,7 +9,7 @@
     margin: 0 auto;
     min-height: 100vh;
 
-    @include respond-below(lg) {
+    @media (max-width: 1024px) {
       flex-direction: column;
     }
   }
@@ -20,7 +20,7 @@
     border-right: 1px solid rgba(212, 165, 116, 0.15);
     padding: 2rem 0;
 
-    @include respond-below(lg) {
+    @media (max-width: 1024px) {
       width: 100%;
       border-right: none;
       border-bottom: 1px solid rgba(212, 165, 116, 0.15);
@@ -33,7 +33,7 @@
     border-bottom: 1px solid rgba(212, 165, 116, 0.15);
     margin-bottom: 2rem;
 
-    @include respond-below(lg) {
+    @media (max-width: 1024px) {
       padding: 0 1rem 1rem;
       margin-bottom: 1rem;
     }
@@ -90,7 +90,7 @@
     flex: 1;
     padding: 2rem;
 
-    @include respond-below(lg) {
+    @media (max-width: 1024px) {
       padding: 1rem;
     }
   }
@@ -106,7 +106,7 @@
     padding: 2rem 2rem 1rem;
     border-bottom: 1px solid rgba(212, 165, 116, 0.15);
 
-    @include respond-below(md) {
+    @media (max-width: 768px) {
       padding: 1.5rem 1.5rem 1rem;
     }
   }
@@ -126,7 +126,7 @@
   &__section-content {
     padding: 2rem;
 
-    @include respond-below(md) {
+    @media (max-width: 768px) {
       padding: 1.5rem;
     }
   }
