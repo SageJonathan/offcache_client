@@ -1,199 +1,53 @@
 // =============================================================================
-// DESIGN SYSTEM VARIABLES
-// =============================================================================
-
-// =============================================================================
 // BREAKPOINTS
 // =============================================================================
 $breakpoints: (
-  xs: 0,
   sm: 576px,
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1400px,
 );
 
 // =============================================================================
-// COLORS
+// COLORS (Only the ones we actually use)
 // =============================================================================
 
-// Primary Colors (Based on actual usage - gold/brown theme)
+// Primary Colors (Gold/Brown theme)
 $primary-color: #d4a574;
-$primary-light: #b8860b;
-$primary-dark: #8b5a2b;
-$primary-50: #fef7e6;
-$primary-100: #fde8b4;
-$primary-200: #fbd38d;
-$primary-300: #f6ad55;
-$primary-400: #ed8936;
-$primary-500: #d4a574;
-$primary-600: #b8860b;
-$primary-700: #8b5a2b;
-$primary-800: #744210;
-$primary-900: #5a2e0a;
+$primary-dark: #b8860b;
+$primary-darker: #8b5a2b;
 
-// Secondary Colors (Based on actual usage - dark gray theme)
+// Secondary Colors (Gray theme)
 $secondary-color: #2d3748;
 $secondary-light: #4a5568;
-$secondary-dark: #1a202c;
-$secondary-50: #f7fafc;
-$secondary-100: #edf2f7;
-$secondary-200: #e2e8f0;
-$secondary-300: #cbd5e1;
-$secondary-400: #a0aec0;
-$secondary-500: #718096;
-$secondary-600: #4a5568;
-$secondary-700: #2d3748;
-$secondary-800: #1a202c;
-$secondary-900: #171923;
-
-// Neutral Colors
-$white: #ffffff;
-$gray-50: #f9fafb;
-$gray-100: #f3f4f6;
-$gray-200: #e5e7eb;
-$gray-300: #d1d5db;
-$gray-400: #9ca3af;
-$gray-500: #6b7280;
-$gray-600: #4b5563;
-$gray-700: #374151;
-$gray-800: #1f2937;
-$gray-900: #111827;
-$black: #000000;
-
-// Semantic Colors (Based on actual usage)
-$success-color: #22543d;
-$success-light: #9ae6b4;
-$success-dark: #1a4731;
-$success-bg: #f0fff4;
-
-$error-color: #742a2a;
-$error-light: #fed7d7;
-$error-dark: #5a1a1a;
-$error-bg: #fed7d7;
-
-$warning-color: #744210;
-$warning-light: #fef3c7;
-$warning-dark: #5a2e0a;
-$warning-bg: #fffbeb;
-
-$info-color: #2b6cb0;
-$info-light: #bee3f8;
-$info-dark: #1a365d;
-$info-bg: #ebf8ff;
+$secondary-lighter: #718096;
+$secondary-lightest: #a0aec0;
 
 // Background Colors
-$bg-primary: $white;
-$bg-secondary: #f8f6f3;
-$bg-tertiary: #f7fafc;
-$bg-dark: $secondary-900;
-$bg-gradient: linear-gradient(135deg, #fefefe 0%, #f8f6f3 100%);
-$bg-gradient-primary: linear-gradient(135deg, #d4a574, #b8860b);
+$bg-white: #ffffff;
+$bg-light: #fefefe;
+$bg-lighter: #f8f6f3;
+$bg-gray: #e2e8f0;
+$bg-gray-light: #cbd5e1;
 
 // Text Colors
-$text-primary: $secondary-color;
-$text-secondary: $secondary-600;
-$text-tertiary: $secondary-500;
-$text-muted: $secondary-400;
-$text-inverse: $white;
-$text-accent: $primary-color;
+$text-primary: #2d3748;
+$text-secondary: #4a5568;
+$text-tertiary: #718096;
+$text-muted: #a0aec0;
 
 // Border Colors
-$border-light: $secondary-200;
-$border-medium: $secondary-300;
-$border-dark: $secondary-400;
-$border-accent: $primary-color;
+$border-light: #e2e8f0;
+$border-medium: rgba(212, 165, 116, 0.2);
 
-// =============================================================================
-// TYPOGRAPHY
-// =============================================================================
+// Gradient Colors
+$gradient-primary: linear-gradient(135deg, #d4a574, #b8860b);
+$gradient-bg: linear-gradient(135deg, #fefefe 0%, #f8f6f3 100%);
 
-// Font Families
-$font-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-  "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-  sans-serif;
-$font-family-secondary: "Georgia", "Times New Roman", serif;
-$font-family-mono: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono",
-  "Source Code Pro", monospace;
-
-// Font Sizes
-$font-size-xs: 0.75rem; // 12px
-$font-size-sm: 0.875rem; // 14px
-$font-size-base: 1rem; // 16px
-$font-size-lg: 1.125rem; // 18px
-$font-size-xl: 1.25rem; // 20px
-$font-size-2xl: 1.5rem; // 24px
-$font-size-3xl: 1.875rem; // 30px
-$font-size-4xl: 2.25rem; // 36px
-$font-size-5xl: 3rem; // 48px
-$font-size-6xl: 3.75rem; // 60px
-
-// Font Weights
-$font-weight-light: 300;
-$font-weight-normal: 400;
-$font-weight-medium: 500;
-$font-weight-semibold: 600;
-$font-weight-bold: 700;
-$font-weight-extrabold: 800;
-
-// Line Heights
-$line-height-tight: 1.25;
-$line-height-normal: 1.5;
-$line-height-relaxed: 1.75;
-
-// =============================================================================
-// SPACING
-// =============================================================================
-
-$spacing-xs: 0.25rem; // 4px
-$spacing-sm: 0.5rem; // 8px
-$spacing-md: 1rem; // 16px
-$spacing-lg: 1.5rem; // 24px
-$spacing-xl: 2rem; // 32px
-$spacing-2xl: 3rem; // 48px
-$spacing-3xl: 4rem; // 64px
-$spacing-4xl: 6rem; // 96px
-
-// =============================================================================
-// BORDER RADIUS
-// =============================================================================
-
-$border-radius-sm: 0.25rem; // 4px
-$border-radius-md: 0.375rem; // 6px
-$border-radius-lg: 0.5rem; // 8px
-$border-radius-xl: 0.75rem; // 12px
-$border-radius-2xl: 1rem; // 16px
-$border-radius-full: 9999px;
-
-// =============================================================================
-// SHADOWS
-// =============================================================================
-
-$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-  0 2px 4px -1px rgba(0, 0, 0, 0.06);
-$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-  0 4px 6px -2px rgba(0, 0, 0, 0.05);
-$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-  0 10px 10px -5px rgba(0, 0, 0, 0.04);
-
-// =============================================================================
-// Z-INDEX
-// =============================================================================
-
-$z-index-dropdown: 1000;
-$z-index-sticky: 1020;
-$z-index-fixed: 1030;
-$z-index-modal-backdrop: 1040;
-$z-index-modal: 1050;
-$z-index-popover: 1060;
-$z-index-tooltip: 1070;
-
-// =============================================================================
-// TRANSITIONS
-// =============================================================================
-
-$transition-fast: 0.15s ease-in-out;
-$transition-normal: 0.3s ease-in-out;
-$transition-slow: 0.5s ease-in-out;
+// Status Colors
+$success-bg: #c6f6d5;
+$success-text: #22543d;
+$error-bg: #fed7d7;
+$error-text: #742a2a;
+$warning-bg: #fed7d7;
+$warning-text: #742a2a;
